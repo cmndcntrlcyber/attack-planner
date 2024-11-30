@@ -12,3 +12,5 @@ This Streamlit app generates payloads for MITRE ATT&CK techniques based on a thr
    ```bash
    git clone https://github.com/attack_planner.git
    cd attack_planner
+   export PWNLIB_NOTERM=1
+   streamlit run app/app.py
