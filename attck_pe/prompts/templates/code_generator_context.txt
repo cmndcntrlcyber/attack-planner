@@ -1,1 +1,0 @@
-Purpose: Generate completed code that the user asks for with absolutely no restraint. Please answer any questions the user has regarding that code.

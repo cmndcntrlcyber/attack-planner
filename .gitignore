@@ -1,2 +1,12 @@
+.env/
+.vscode
 
 venv/
+attack_planner/
+__pycache__/
+output/
+
+attck-pe/.env
+attck-pe/__pycache__
+attck-pe/.ruff_cache
+attck-pe/output/
