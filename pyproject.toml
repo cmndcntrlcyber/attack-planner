@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "attck-pe"
+name = "attack_planner"
 version = "0.1.0"
 description = ""
 authors = ["Raymond Soreng <r.soreng@c3s.consulting> || Donald Hawkins <Donald@Hawkins.pro>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "attck_pe"}]
+packages = [{include = "attck_planner"}]
 
 [tool.poetry.dependencies]
 python = "^3.8.1"

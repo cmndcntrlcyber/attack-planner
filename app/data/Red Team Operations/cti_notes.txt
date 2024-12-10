@@ -1,0 +1,207 @@
+Cyber Threat Intelligence (CTI) - Demo
+Install Notes and Usage | TheHive + MISP + Cortex
+RH Red Team - Karol Cenda
+12/03/2021
+Cyber Threat Intelligence (CTI) - Demo
+12/03/2021
+Demo Image Usage
+Open terminal and type “startdemo”. If you are prompted for a password, enter “user”.
+Please allow ~3 minutes for all service to start
+All services are accessible using the information in the table below.
+Service
+Address
+User
+Password
+Local User
+user
+user
+The Hive
+http://localhost:9000
+admin@thehive.local
+jzL69XBBfwBhfmC
+Cortex
+http://localhost:9001
+admin
+C2*Ez7@!w!mXcS
+MISP
+https://localhost:443
+admin@admin.test
+2ZAfBn65&Lb*zb
+API Keys
+• cortex:z3nncZODZJBUoIncW63AxpUq4XeE4HA2
+• misp:lzwE8yuaXGs65sD0trmPFtEwyiQUs7Btg7vccE8u
+Install Notes
+Installed on Ubuntu 18.04LTS
+Sofware
+• TheHive
+• MISP
+• Cortex
+Resources
+• https://thehive-project.org/
+• https://www.misp-project.org/
+• https://releases.ubuntu.com/18.04.6/
+• https://github.com/TheHive-Project/Docker-Templates
+Prerequisites
+RH Red Team - Karol Cenda
+2
+Cyber Threat Intelligence (CTI) - Demo
+12/03/2021
+1
+sudo apt -y install git curl docker.io
+2
+3
+# Install docker-compose newest version
+4
+sudo curl -L "https://github.com/docker/compose/releases/download
+/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/
+docker-compose
+5
+sudo chmod +x /usr/local/bin/docker-compose
+Install
+1
+# Move into home folder
+2
+cd ~
+3
+4
+# Download required files from GitHub
+5
+git clone https://github.com/TheHive-Project/Docker-Templates
+6
+7
+# Move into working directory
+8
+cd ~/Docker-Templates/docker/thehive4-cortex3-misp-shuffle
+9
+10
+# Remove shuffle from docker-compose file, not necessary for this demo
+11
+mv docker-compose.yml docker-compose.yml.old && IFS='' && while read -r
+line; do echo "$line" >> docker-compose.yml; if [[ "$line" == "#
+READY FOR AUTOMATION ?" ]]; then break; fi; done < docker-compose.
+yml.old
+12
+13
+# Take control of all files (**DO NOT DO THIS IN PRODUCTION**)
+14
+sudo chown -R 1000:1000 *
+15
+16
+# Start conatiners
+17
+sudo /usr/local/bin/docker-compose up
+The containers may take some time to start up for the first time, please be patient.
+Configure Integration
+In order to integrate MISP and Cortex with TheHive, the API keys from both platforms must be added
+to the configuration file. This will outline how to work through that process.
+Service
+Address
+User
+Password
+The Hive
+http://localhost:9000
+admin@thehive.local
+secret
+Cortex
+http://localhost:9001
+MISP
+https://localhost:443
+admin@admin.test
+admin
+RH Red Team - Karol Cenda
+3
+Cyber Threat Intelligence (CTI) - Demo
+12/03/2021
+Cortex
+Login to Cortex using it’s address found in the table above. The first time accessing Cortex will prompt
+for updating the database, click “update database”. Next, create an administrator user, an organization,
+and another user (remember to set password) and create an API key to use with the TheHive.
+Once the API key is obtained, place the key in the correct location in TheHive’s application.conf
+Note: Make sure the current working directory is set to ~/Docker-Templates/docker/thehive4-
+cortex3-misp-shufle
+1
+nano thehive/application.conf
+1
+(...)
+2
+cortex {
+3
+servers = [
+4
+{
+5
+name = local
+6
+url = "http://cortex:9001"
+7
+auth {
+8
+type = "bearer"
+9
+key = "XXXXXXXXXXXXXXx" # <---- Cortex API key here
+10
+}
+11
+(...)
+MISP
+Login to MISP using it’s address and credentials found in the table above. Go to “My Profile” where
+there will be an “Auth Keys” item. There, create a new API key and note this key as it will no longer be
+accessible in clear text once the window is closed.
+Once the API key is obtained, place the key in the correct location in TheHive’s application.conf
+Note: Make sure the current working directory is set to ~/Docker-Templates/docker/thehive4-
+cortex3-misp-shufle
+1
+nano thehive/application.conf
+1
+(...)
+2
+misp {
+3
+interval: 5 min
+4
+servers: [
+5
+{
+6
+name = "MISP THP"
+# MISP name
+7
+url = "https://misp/" # URL or MISP
+RH Red Team - Karol Cenda
+4
+Cyber Threat Intelligence (CTI) - Demo
+12/03/2021
+8
+auth {
+9
+type = key
+10
+key = "XXXXXXXXXXXXXXx"
+# <---- MISP API key here
+11
+}
+12
+wsConfig { ssl { loose { acceptAnyCertificate: true } } }
+13
+}
+14
+]
+15
+}
+16
+(...)
+Restart Services
+Afer configuration, the containers should be restarted. To do so, press CTRL + C on the active terminal
+to stop the containers gracefully. Afer the containers have stopped, re-run the command to start the
+containers.
+Note: Make sure the current working directory is set to (...)/Docker-Templates/docker/thehive4-
+cortex3-misp-shufle
+1
+# Start conatiners
+2
+sudo /usr/local/bin/docker-compose up
+Both MISP and Cortex are now integrated with TheHive and this can be confirmed by pressing the
+“About” button in the sub-menu located at the top right corner of TheHive’s web UI.
+Both services should report their status as “OK”
+RH Red Team - Karol Cenda
+5

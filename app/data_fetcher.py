@@ -1,5 +1,5 @@
 
-from attck_pe.planner import client
+from attck_planner.planner import client
 
 def fetch_techniques():
     try:

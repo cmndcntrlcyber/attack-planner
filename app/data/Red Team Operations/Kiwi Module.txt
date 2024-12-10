@@ -1,0 +1,292 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Page 2 of 14 
+ 
+Contents  
+Introduction .......................................................................................3 
+SAM ...................................................................................................4 
+LSA Secrets ........................................................................................4 
+Changing Password of a User .............................................................5 
+DC Sync Attack ...................................................................................5 
+Golden Tickets ...................................................................................8 
+Purging Tickets ...................................................................................8 
+Extract Credentials from Security Packages ........................................9 
+MSV ................................................................................................................. 9 
+Kerberos ........................................................................................................ 10 
+SSP ................................................................................................................. 10 
+WDigest ......................................................................................................... 11 
+All .................................................................................................................. 11 
+Mimikatz Commands ....................................................................... 12 
+Extract Wi-Fi Credentials .................................................................. 13 
+Conclusion ....................................................................................... 14 
+ 
+ 
+ 
+ 
+ 
+ Page 3 of 14 
+ 
+Introduction  
+To begin with the demonstration, we first need to compromise a Windows machine that is part of a 
+network governed by a Domain Controller. The choice of compromise is your own. After the initial 
+compromise through Metasploit, we get a meterpreter shell. There are a bunch of inbuilt commands that 
+are loaded inside the meterpreter shell if some commands or a set of commands are not loaded then they 
+can be loaded in the form of a module. Mimikatz is also a module that needs to be loaded inside the 
+meterpreter shell. After loading the module, you can hit the help command to see a list of different 
+options and attacks that can be performed on the target machine through this meterpreter shell. 
+ 
+ 
+load kiwi 
+help kiwi 
+ 
+ 
+ Page 4 of 14 
+ 
+SAM 
+The lsa_dump_sam module gets the SysKey to decrypt SAM entries (from the registry or hive). It connects 
+to the local Security Account Manager (SAM) database and dumps credentials for local accounts. As we 
+know, LSA is a system process that authenticates and logs users on the system. LSA authenticates the 
+domain credentials that are used by the operating system. The user information is validated by LSA by 
+accessing the SAM of each computer. If there is a code that is running inside the LSA process, then that 
+process is able to access the credentials. LSA is able to store Reversibly encrypted plaintext, Kerberos 
+tickets (ticket-granting tickets (TGTs), service tickets), NT hash, LAN Manager (LM) has. Here we can see 
+that NTLM hash is extracted of the raj user. 
+ 
+ 
+Learn More: Credential Dumping: Local Security Authority (LSA|LSASS.EXE) 
+LSA Secrets 
+LSA secrets Let’s understand what the secret behind this is. Earlier, it was designed to store cached domain 
+records. After a while, Microsoft expanded its usage to store passwords, IE passwords, SQL Passwords, 
+RAS Passwords, CISCO passwords and much more. A slice of the secrets can be seen in the screenshot 
+below. This is quite less information than it was promised as this is a local lab environment. Real Working 
+Domain Controllers have much more data. 
+lsa_dump_sam 
+lsa_dump_secrets 
+ 
+ 
+ Page 5 of 14 
+ 
+ 
+ 
+Changing Password of a User 
+The ability to change the password for a user can be not only a high-risk situation but also be a tad bit 
+annoying. The password_change module can help you do just that. There is an option to change the 
+password if the old password is known. It generates and stores an NTLM hash for the new user. The other 
+option is that if you are able to extract the NTLM hash of a user, say using lsadump, then you have the 
+ability to change the password for that user. 
+ 
+ 
+DC Sync Attack 
+As discussed earlier, the DC Sync attack allows an attacker to replicate Domain Controller (DC) behaviour. 
+In simple words, it impersonates as a domain controller and requests other DC’s for user credential data 
+password_change -u raj -p 123 -P 9876  
+password_change -u raj -n <NTLM-hash> -P 1234 
+ 
+ 
+ Page 6 of 14 
+ 
+via GetNCChanges. The only barrier is that you need a compromised machine and a user who is a member 
+of the privileged account (Administrators, Domain Admin, or Enterprise Admin).  
+ dcsync_ntlm krbtgt 
+dcsync krbtgt 
+ 
+ 
+ Page 7 of 14 
+ 
+ 
+ 
+ 
+ Page 8 of 14 
+ 
+Learn More: Credential Dumping: DCSync Attack 
+Golden Tickets 
+Golden Tickets are an attack that forges the Kerberos Ticket Granting Tickets (TGT), which in turn is used 
+to authenticate users with the help of Kerberos. The Ticket Granting Services (TGS) is dependent upon the 
+TGTs to verify the authenticity of tickets. This means that the forged ticket can be used to directly 
+authenticate the attacker. These tickets can have a life span of up to a decade. That makes them so 
+valuable, almost like gold. 
+ 
+ 
+ 
+Learn More: Domain Persistence: Golden Ticket Attack 
+Purging Tickets 
+While working with the tokens and tickets, there will be a time where the number of tickets will be too 
+large to work with. This scenario will arise sooner or later, and that’s when the purge command will help 
+you. It will purge all the tickets in the current session. 
+golden_ticket_create -d ignite.local -u pavan -s <SID> -k <hash> -t /root/ticket.kirbi 
+kerberos_ticket_use /root/ticket.kirbi 
+shell 
+dir\\DC1.ignite.local\c$ 
+ 
+ 
+ Page 9 of 14 
+ 
+ 
+ 
+ 
+Extract Credentials from Security Packages 
+MSV 
+Microsoft provides the MSV1_0 authentication package for local machine logons that do not require 
+custom authentication. The Local Security Authority (LSA) uses the MSV1_0 authentication package to 
+process logon data collected by the GINA for the Winlogon logon process. The MSV1_0 package checks 
+the local security accounts manager (SAM) database to determine whether the logon data belongs to a 
+valid security principle and then returns the result of the logon attempt to the LSA. MSV1_0 also supports 
+domain logons. MSV1_0 processes domain logons using pass-through authentication. We can extract the 
+hash using the creds_msv command on meterpreter as shown in the image. 
+ 
+kerberos _ticket_list 
+kerberos_ticket_purge 
+kerberos_ticket_list 
+creds_msv 
+ 
+ 
+ Page 10 of 14 
+ 
+ 
+Kerberos 
+Similarly, if we want to extract the credentials from the Kerberos Service, we can run creds_kerberos to 
+attack the Kerberos. This, however, has the ability to extract clear-text passwords for the users. 
+ 
+ 
+SSP 
+An SSP (Security Support Provider) is a dynamic-link library (DLL) that implements the SSPI by making one 
+or more security packages available to applications. Each security package provides mappings between 
+an application’s SSPI function calls and an actual security model function. Security packages support 
+security protocols such as Kerberos authentication and the Microsoft LAN Manager. Due to the 
+connection of the SSP with Kerberos, it can extract credentials in clear text, as shown in the image below. 
+ 
+creds_kerberos 
+creds_ssp 
+ 
+ 
+ Page 11 of 14 
+ 
+ 
+WDigest 
+WDigest.dll was introduced in the Windows XP operating system. The Digest Authentication protocol is 
+designed for use with Hypertext Transfer Protocol (HTTP) and Simple Authentication Security Layer (SASL) 
+exchanges. These exchanges require that parties that seek to authenticate must demonstrate their 
+knowledge of secret keys. This process improves upon earlier versions of HTTP authentication, in which 
+users provide passwords that are not encrypted when they are sent to a server, leaving them vulnerable 
+to capture by attackers using the creds_wdigest. 
+ 
+ 
+ 
+ 
+ 
+All 
+If you want to extract all the possible hashes or credentials from all the security packages on the target 
+machine, then use the creds_all command on the meterpreter. It will show all the credentials from the 
+packages that we just discussed in one go. 
+ 
+creds_wdigest 
+creds_all 
+ 
+ 
+ Page 12 of 14 
+ 
+ 
+Learn More: Credential Dumping: SAM 
+Mimikatz Commands 
+There are some modules within the Mimikatz that do not have direct access in the form of Kiwi 
+commands.This is where the ability to run the Mimikatz commands comes to the rescue. This acts as a 
+normal shell with the ability to run the Mimikatz commands and perform almost all the attacks possible 
+in the scenario. 
+ 
+ 
+ Page 13 of 14 
+ 
+ 
+ 
+Extract Wi-Fi Credentials 
+Among the attacks that duplicate the tickets to provide the ability to run the commands as a domain 
+controller, the ability to read the Wi-Fi credentials seems a bit dim, but this is not the case. Wi-Fi 
+passwords are not the most thought-out passwords. It is usually the first thing that comes to the user’s 
+mind. This provides insight as to how that particular user will create passwords. There is a good chance 
+that the account of that user will have the same passwords. Even if it turns out to be that case, you get 
+free Wi-Fi access, and that’s not bad. 
+ 
+ 
+kiwi_cmd hostname 
+wifi_list 
+ 
+ 
+ Page 14 of 14 
+ 
+ 
+Conclusion 
+Following the Credential Dumping Series, which included various tools that could be used against a specific 
+vulnerability, and PowerShell Empire for Pentester: Mimikatz Module, which demonstrated PowerShell 
+Empire's ability to attack the Windows Authentication Process,We felt the need for a guide that could 
+help a person who is trying to get the reins of Metasploit.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+JOIN OUR
+TRAINING PROGRAMS
+www.ignitetechnologies.in
+BEGINNER
+Network Pentest
+Bug Bounty
+Wireless Pentest
+Network Security
+Essentials
+Ethical Hacking
+ADVANCED
+EXPERT
+Burp Suite Pro
+CTF
+Windows
+Linux
+Pro
+Infrastructure VAPT
+APT’s - MITRE Attack Tactics
+MSSQL Security Assessment
+Active Directory Attack
+Red Team Operation
+Privilege Escalation
+Web
+Services-API
+Android Pentest
+Computer
+Forensics
+Advanced
+Metasploit
+CLICK HERE
