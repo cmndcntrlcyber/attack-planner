@@ -795,9 +795,7 @@ Destination
 address
 Destination
 port
-
-
-
+
 TCP header
 TCP payload
 PDU
@@ -863,9 +861,7 @@ MAC: 00-11-22-33-44-55
 192.1.1.50
 MAC: 66-77-88-99-AA-BB
 192.1.1.100
-
-
-
+
 Figure 1-5: A simple Ethernet network
 In this example, the node at  with the IP address 192.1.1.101 wants 
 to send data using the IP protocol to the node at  with the IP address 
@@ -902,8 +898,6 @@ until the data reaches the desired destination node, as shown in Figure 1-6.
 MAC: 00-11-22-33-44-55
 192.1.1.50
 192.1.1.100
-
-
 
 200.0.1.50
 MAC: 66-77-88-99-AA-BB
@@ -1089,8 +1083,6 @@ traffic is sent to your network interface.
 Figure 2-2 shows the default view when capturing traffic from an 
 Ethernet interface. 
 Capturing Application Traffic   13
-
-
 
 Figure 2-2: The default Wireshark view
 There are three main view areas. Area u shows a timeline of raw packets 
@@ -1293,8 +1285,6 @@ which helps you determine where in an application network connections
 are being made. This will become important in Chapter 6 when we start 
 reverse engineering binaries to work out the network protocol. Figure 2-6 
 shows a single HTTP connection to a remote server in detail.
-
-
 
 
 Figure 2-6: A single captured connection
@@ -5795,8 +5785,6 @@ Application Reverse Engineering   127
 Functions  Shows a list of all functions that IDA Pro has identified 
 Strings  Shows a list of printable strings that IDA Pro has identified 
 during analysis 
-
-
 
 Figure 6-6: The main IDA Pro interface
 Of the five window types listed, the last four are basically just lists of 
@@ -6018,7 +6006,7 @@ Plugins4Krypto Analyzer. If the executable contains any cryptographic
 algorithms, the plug-in should identify them and display a dialog like the 
 one in Figure 6-13. You can then enter the referenced address value u into 
 IDA Pro to analyze the results.
-
+
 Figure 6-13: The result of PEiD cryptographic  
 algorithm analysis
 Dynamic Reverse Engineering
@@ -6163,12 +6151,8 @@ sound like network functions. To search all loaded assemblies, press F3. A
 new window should appear on the right side of your screen, as shown in 
 Figure 6-19.
 Application Reverse Engineering   139
-
-
 
 Figure 6-18: The ILSpy main interface
-
-
 
 Figure 6-19: The ILSpy Search window
 140   Chapter 6
@@ -6184,8 +6168,6 @@ phy libraries. The base class library contains a large set of low-level socket
 APIs and libraries for higher-level protocols, such as HTTP and FTP. If you 
 right-click a type or member in the left window and select Analyze, a new 
 window should appear, as shown at the right side of Figure 6-20.
-
-
 
 Figure 6-20: ILSpy analyzing a type
 This new window is a tree, which when expanded, shows the types of 
@@ -6230,8 +6212,6 @@ To decompile Java programs, I recommend using JD-GUI (http://jd.benow​
 applications. I won’t cover using JD-GUI in depth but will just highlight a few 
 important areas of the user interface in Figure 6-22 to get you up to speed.
  
-
-
 
 
 
@@ -7700,7 +7680,7 @@ ify the identity in the certificate by matching the certificate’s Subject fiel
 to the server’s domain name. For example, Figure 7-20 shows a certificate 
 for the domain www.domain.com. The Subject contains a Common Name 
 (CN) u field that matches this domain. 
-
+
 Figure 7-20: The Certificate Subject for www.domain.com
 A certificate’s Subject and Issuer fields are not simple strings but 
 X.500 names, which contain other fields, such as the Organization (typi-
@@ -10600,7 +10580,7 @@ Local variables
 Upper stack frame
 Local variables
 Return
-
+
 0x12345678
 
 
@@ -10646,7 +10626,7 @@ implements. The use of virtual functions allows a developer to make new
 classes derived from existing base classes and override some of the func-
 tionality, as illustrated in Figure 10-3.
 Object* p = new Object;
-
+
 p->Func1();
 mov ecx, [p]
 mov eax, [ecx + offset Func1]
@@ -10735,8 +10715,6 @@ p->Func1();
 p
 p
 p
-
-
 
 Figure 10-5: An example of a use-after-free vulnerability
 Although it’s shown in the figure as being free memory, the original 
@@ -11682,8 +11660,6 @@ String buffer (9 bytes)
 Readable data (5 bytes)
 Readable data (100 bytes)
 Overflow direction
-
-
 Figure 10-10: Converting memory corruption to information disclosure
 At the top is the original pattern of heap allocations . If the vulnerable 
 allocation is placed prior to the string buffer in memory, we would have the 
@@ -11848,8 +11824,6 @@ Stack canary
 0x12345678
 f = ADDR
 f = 0x12345678
-
-
 
 int DoSomething(const char* str)
 {
@@ -11892,8 +11866,6 @@ Overflow direction
 Return
 Stack canary
 Return address
-
-
 
 void DoSomething() {
   int buffer[32];

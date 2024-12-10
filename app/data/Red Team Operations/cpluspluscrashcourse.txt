@@ -5197,8 +5197,6 @@ Element* next;
 New Element:
 Element* next;
 ...
-
-
 
 Figure 3-2: Inserting an element into a linked list
 Each Element also contains a prefix array y and an operating_number 
@@ -7329,26 +7327,26 @@ Move
 Assignment
 If you explicitly define:
 You’ll end up with:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Copies are used
 in place of moves 
-
-
+
+
 Figure 4-8: A chart illustrating which methods the compiler generates when given various inputs
 If you provide nothing, the compiler will generate all five destruct/
 copy/move functions. This is the rule of zero.

@@ -1507,12 +1507,10 @@ R
 P R
 , , 
 , 
-
+
  
-
+
  
-
-
 
 Here, R is a string randomly chosen for each new encryption and given 
 to a DRBG along with the key (K || R denotes the string consisting of K fol­
@@ -2184,10 +2182,8 @@ k
  
 x
 x7fffffff
-
-
-
-
+
+
 
 
 
@@ -6523,7 +6519,7 @@ length as the chaining value.
 E
 Hi
 Mi
-Hi  1
+Hi  1
 Figure 6-5: The Davies–
 Meyer construction. The 
 dark triangle shows where 
@@ -6536,8 +6532,8 @@ Mi
 E
 Mi
 Hi
-Hi  1
-Hi  1
+Hi  1
+Hi  1
 Figure 6-6: Other secure block cipher–based compression  
 function constructions
 Permutation-Based Hash Functions: Sponge Functions
@@ -7054,7 +7050,7 @@ E
 Hi
 Mi
 Parameters
-Hi  1
+Hi  1
 Figure 6-8: BLAKE2’s compression 
 function. The two halves of the 
 state are XORed together after 
@@ -8469,10 +8465,6 @@ X
 X
 X
 X
-
-
-
-
 
 We now apply modulo reduction, reducing X + X 2 + X 4 + X 5 modulo 
 1 + X 3 +X 4 to give us X 2, because X + X 2 + X 4 + X 5 can be written as 
@@ -8514,26 +8506,14 @@ K N
 2
 0
 0
-
-
 
-
-
-
-
 
-
+
 
 
 
 
-
-
-
-
 
-
-
 
 
 
@@ -8561,14 +8541,6 @@ K N
 2
 0
 
-
-
-
-
-
-
-
-
 
 
 0
@@ -9949,7 +9921,7 @@ co-prime with n, which is the number of elements in Zn
 product of prime numbers n = p1 × p2 × . . . × pm, the number of elements in 
 the group Zn
 * is the following:
- n
+ n
 p
 p
 p m
@@ -10014,10 +9986,8 @@ ed
 mod 
  mod  
  
-
-
-
-
+
+
 
 Because d is the trapdoor that allows us to decrypt, it is part of the pri­
 vate key in an RSA key pair, and, unlike the public key, it should always be 
@@ -10606,14 +10576,6 @@ i
 i
 i
 i
-
-
-
-
-
-
-
-
 
 
 
@@ -10661,13 +10623,9 @@ P(11); and then we add them together to get the following expression:
 231
 5
 6
-
-
-
-
-
-
-
+
+
+
 
 
 
@@ -10694,10 +10652,8 @@ P(11); and then we add them together to get the following expression:
  mod 
  
  m
-
-
-
-
+
+
 
 
 
@@ -10734,8 +10690,6 @@ q
 n
 p
 q
-
-
 
 
 
@@ -10901,8 +10855,8 @@ n
 n
 k
 k
-
-
+
+
 ( )
 ( )
 
@@ -12118,9 +12072,7 @@ d Q
 1
 2
 2
-
-
-
+
 In order to find these points, we replace Q with the value kP, and we 
 have the following:
 c P
@@ -12139,15 +12091,11 @@ d k P
 2
 2
 2
-
-
-
+
 
 
 
-
-
-
+
 
 
 This tells us that (c1 + d1k) equals (c2 + d2k) when taken modulo the 
@@ -12178,13 +12126,11 @@ d
 2
 2
 1
-
-
-
-
-
-
-
+
+
+
+
+
 
  
  
@@ -13384,7 +13330,7 @@ probabilities, |α|2 and |β|2 must be numbers between 0 and 1, and |α|2 + |β|
 must be equal to 1. 
 For example, say we have the qubit Ψ (psi) with amplitudes of α = 1/√2 
 and β = 1/√2. We can express this as follows:
-  
+  
 
  
 
@@ -13410,10 +13356,6 @@ actual probability from the amplitudes, we compute the modulus of 1/√2
 (1/√2)2 = 1/2. That is, if you observe the qubit Ψ, you’ll have a 1/2 chance 
 of seeing a 0, and the same chance of seeing a 1.
 Now consider the qubit Φ (phi), where 
-
-
-
-
  
 
  
@@ -13448,7 +13390,7 @@ amplitudes have equal values, the qubit Φ has distinct amplitudes of α = i/�
 however, you observe Φ, the chance of your seeing a 0 or 1 is 1/2, the same as 
 it is with Ψ. Indeed, we can compute the probability of seeing a 0 as follows, 
 based on the preceding rules:
-
+
 2
 2
 2
@@ -13675,7 +13617,7 @@ H =
 −
 Quantum and Post-Quantum   257
 Let’s see what happens if we apply this gate to the qubit |Ψ⟩ = (1/√2, 1/√2):
-H  
+H  
 
 
 
@@ -13753,8 +13695,6 @@ H 0
 2
 1
 2
-
-
 
 
 
@@ -13763,13 +13703,11 @@ H 0
 
 
 
- 
-
-
+ 
 
 
 
- 
+ 
 /
 /
 /

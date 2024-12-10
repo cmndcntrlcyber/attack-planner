@@ -2680,8 +2680,6 @@ Legitimate OBJECT_TYPE
 OpenProcedure
 Legitimate
 OpenProcedure handler
-
-
 
 Malicious OBJECT_TYPE
 OpenProcedure
@@ -4378,8 +4376,6 @@ and executed.
 Load bootmgr.
 bootmgr is loaded 
 and receives control.
-
-
 
 
 
@@ -4765,7 +4761,7 @@ Static Analysis of a Bootkit Using IDA Pro   97
 Load the binary file by opening it via IDA Pro. When IDA Pro first 
 loads the MBR, it displays a message offering various options, as shown in 
 Figure 8-1.
-
+
 Figure 8-1: The IDA Pro dialog displayed when loading the MBR
 You can accept the defaults for most of the parameters, but you need 
 to enter a value into the Loading offset field , which specifies where in 
@@ -5107,8 +5103,6 @@ Being able to read and understand the MBR’s partition table is essen-
 tial for spotting this kind of early bootkit interception. Take a look at the 
 partition table in Figure 8-4, where each 16/10h-byte line is a partition 
 table entry.
-
-
 
 
 Figure 8-4: Partition table of the MBR
@@ -5624,8 +5618,6 @@ with flat layout. This means the offset within the file disk image corre-
 sponds to the offset on the disk, which allows us to easily edit and modify 
 the image.
 Bootkit Dynamic Analysis: Emulation and Virtualization   119
-
-
 
 
 
@@ -5794,7 +5786,7 @@ three options for the Bochs operation mode:
 Disk image  Launch Bochs and execute the disk image.
 IDB  Emulate a selected part of the code inside Bochs.
 PE  Load and emulate the PE image inside Bochs.
-
+
 Figure 9-4: Choosing the operation mode for Bochs
 For our case, we select Disk image  to make Bochs load and execute 
 the disk image we created and infected earlier.
@@ -5804,8 +5796,6 @@ because we set the breakpoint earlier, it will break upon execution of the
 first instruction of the MBR at address 0000:7c00h. We can then use the 
 standard IDA Pro debugger interface to debug the boot components (see 
 Figure 9-5).
-
-
 
 
 Figure 9-5: Debugging MBR from IDA interface on a Bochs VM
@@ -5934,7 +5924,7 @@ from 32-bit to 16-bit. To do this, right-click the target segment and choose
 Change segment attributes. In the dialog that appears, select 16-bit  in 
 the Segment bitness pane, as shown in Figure 9-9.
 128   Chapter 9
-
+
 Figure 9-9: Changing the bitness of the memory segment
 This will make the segment 16-bit, and all the instructions in the boot 
 components will be correctly disassembled.
@@ -5963,14 +5953,12 @@ meaning that the breakpoint will control only 1 byte at address 0000:7c00h.
 Once these parameters are set, click OK and then resume execution by 
 pressing F9.
 Bootkit Dynamic Analysis: Emulation and Virtualization   129
-
-
 
 
 Figure 9-10: The Breakpoint settings dialog
 Once the MBR is loaded and executed, the debugger breaks. The 
 debugger window is shown in Figure 9-11.
-
+
 Figure 9-11: The IDA Pro debugger interface
 130   Chapter 9
 At this point, we are at the very first instruction of the MBR code, as 
@@ -6349,7 +6337,7 @@ and load original VBR.
 Load bootmgr.
 Continue kernel
 initialization.
- MBR is loaded
+ MBR is loaded
 and executed.
  Infected VBR is loaded
 and executed.
@@ -6875,8 +6863,6 @@ is denoted as MEMORY:7c00h because IDA Pro displays the segment name (in
 our case, MEMORY) instead of the segment base address 0000h. Because Rovnix 
 infects the IPL code and not the MBR, the MBR code shown in the debugger 
 is legitimate and we won’t dig into it very deeply. 
-
-
 
 
 
@@ -6916,7 +6902,7 @@ code, set a breakpoint at the last instruction of the VBR routine at address
 the breakpoint, the debugger breaks on the retf instruction. Execute this 
 instruction with F8 to get to the malicious IPL code.
 156   Chapter 11
-
+
 Figure 11-9: VBR code
 Dissecting the IPL Polymorphic Decryptor
 The malicious IPL code starts with a series of instructions, in basic blocks, 
@@ -7079,7 +7065,7 @@ Patch bootmgr.
 VBR is loaded
 and executed.
 Read BCD.
- Restore bootmgr, 
+ Restore bootmgr, 
 hook INT 1h handler,
 and copy itself over IDT. 
 Load winload.exe. 
@@ -8224,7 +8210,7 @@ the INT 13h handler, patching bootmgr, and hooking OslArchTransferToKernel.
 But, unlike Gapz, in the next step Rovnix compromised the kernel by patch-
 ing the kernel KiSystemStartup routine. 
 190   Chapter 12
- INT 13h handler is hooked.
+ INT 13h handler is hooked.
 Hook Archx86TransferTo32BitApplicationAsm
 in bootmgr.
 Hook OslArchTranferToKernel
@@ -8730,8 +8716,6 @@ driver image
 DriverUnload routine
 IRP_MJ_DEVICE_CONTROL
 handler
-
-
 
 Figure 12-15: Gapz payload interface architecture
 The malware first sets the DriverUnload field  of the DRIVER_OBJECT struc-
@@ -9035,8 +9019,6 @@ Encrypt user files
 Destroy file encryption key
 Display random message
 Generate file encryption key
-
-
 
 
 
@@ -9226,8 +9208,6 @@ counter
 56
 57
 58
-
-
 
 
 
@@ -9278,7 +9258,7 @@ backup GPT
 header
 0
 58
-
+
 Filesystem data
 Encrypted
 backup GPT
@@ -9359,8 +9339,6 @@ Only the attacker should be able to retrieve the password from the ransom
 key, so in order to protect it, Petya uses the ECC public key encryption 
 scheme, which is embedded in the malware. We will refer to this public key 
 as the C&C public key ecc_cc_public_key. 
-
-
 
 
 
@@ -9761,8 +9739,6 @@ MBR
 2
 7
 15
-
-
 
 
 Code page
@@ -11827,8 +11803,6 @@ UEFI Capsule Updates, and to extract different DXE or PEI executable mod-
 ules as standalone binaries. We will come back to UEFITool in Chapter 19. 
 Figure 15-10 shows the structure of the UEFI Capsule Update in the 
 output of the UEFITool.
-
-
 
 
 
@@ -13236,8 +13210,6 @@ Copied S3 boot script
 Shellcode
 +0x18: S3 boot script pointer
 AcpiGlobalVariable structure
-
-
 
 
 Figure 16-6: Step-by-step exploitation of an S3 boot script
@@ -14465,7 +14437,7 @@ FIT entry #N
 FIT entry #1
 FIT entry #0
 0x00000000
- 0xffffffc0
+ 0xffffffc0
 . . .
 Figure 17-13: The FIT’s location in memory
 When the CPU is powered on, it reads the address of the FIT from the 
@@ -14820,7 +14792,7 @@ How UEFI Secure Boot Works   349
 using the secure world public key obtained from the trusted key certificate. 
 The BL31 key certificate contains the BL31 content certificate public key 
 used to verify the signature of the BL32 content certificate. 
-
+
 Issuer key: root of
 trust public key
 (ROTPK)
@@ -15083,7 +15055,7 @@ We won’t cover all possible miniport storage hooking methods in this section.
 Instead, we’ll focus on the most common approaches that we’ve come across 
 in the course of our malware analyses. 
 First, we’ll take a closer look at the storage device, shown in Figure 18-3. 
-
+
 Storage miniport
 driver image
 Handler 0
@@ -15530,7 +15502,7 @@ Super I/O
 SPI flash
 Trusted Platform
 Module 2.0
-
+
 SPI bus
 Figure 19-1: A block diagram of a modern Intel chipset
 The motherboard of a PC typically has one discrete physical SPI flash 
@@ -15693,8 +15665,6 @@ Reserved
 16
 12
 0
-
-
 Figure 19-3: The layout of FREG1 SPI register
 The Region Base field v provides 24:12 bits of the base address for the 
 BIOS region in the SPI flash. Since the BIOS region is aligned at 4Kb, the 
@@ -15714,8 +15684,6 @@ FGO
 Reserved
 16
 0
-
-
 FCYCLE
 FDBC
 
@@ -15824,8 +15792,6 @@ Write read command to HSFC
 Set FGO (0x0001) bit in HSFC
 Wait for SPI read cycle completion
 Read data from FDATAX registers
-
-
 
 
 
@@ -15896,8 +15862,6 @@ Write read command to HSFC
 Set FGO (0x0001) bit in HSFC
 Wait for SPI read cycle completion
 Read data from FDATAX registers
-
-
 
 
 
@@ -16225,8 +16189,6 @@ First, launch UEFITool and select File4Open image file. Then select the
 file with the SPI image you want to analyze—we’ve supplied one you can 
 use with the book’s resources at https://nostarch.com/rootkits/. Figure 19-14 
 shows the result of this operation.
-
-
 
 
 
@@ -16268,8 +16230,6 @@ Let’s examine the firmware volumes available in the BIOS we’ve
 acquired. If we double-left-click the BIOS region in the UEFITool win-
 dow (as in Figure 19-15), we get a list of firmware volumes available, as 
 shown in Figure 19-16.
-
-
 
 
 
@@ -16375,8 +16335,6 @@ which demonstrates the location of the CpuInitDxe driver in the firmware
 volume. This driver is responsible for CPU initialization at the DXE phase. 
 We’ll go from the bottom to the top in the FFS hierarchy in order to 
 describe its location in the firmware image.
-
-
 
 
 

@@ -9782,7 +9782,8 @@ p / P
 Any Other Key 
 Print Status 
 	
-
+
+
 
 22
 30
@@ -9834,7 +9835,8 @@ An open port completes the transfer over the specified connection.
 NMAP 
 Professor Messer’s Quick Reference Guide to  
 	
-
+
+
 
 23
 31
@@ -11072,990 +11074,3665 @@ RECV 1: IP / ICMP 174.143.213.184 > 192.168.1.140
 RECV 1: IP / ICMP 174.143.213.184 > 192.168.1.140
 35
 43
-State	   Meaning	  
-S0	  
-Connec&on	  a)empt	  seen,	  no	  reply	  
-S1	  
-Connec&on	  established,	  not	  terminated	  (0	  byte	  counts)	  
-SF	  
-Normal	  establish	  &	  termina&on	  (>0	  byte	  counts)	  
-REJ	  
-Connec&on	  a)empt	  rejected	  
-S2	  
-Established,	  ORIG	  a)empts	  close,	  no	  reply	  from	  RESP.	  
-S3	  
-Established,	  RESP	  a)empts	  close,	  no	  reply	  from	  ORIG.	  
-RSTO	  
-Established,	  ORIG	  aborted	  (RST)	  
-RSTR	  
-Established,	  RESP	  aborted	  (RST)	  
-RSTOS0	   ORIG	  sent	  SYN	  then	  RST;	  no	  RESP	  SYN-­‐ACK	  
-RSTRH	   RESP	  sent	  SYN-­‐ACK	  then	  RST;	  no	  ORIG	  SYN	  
-SH	  
-ORIG	  sent	  SYN	  then	  FIN;	  no	  RESP	  SYN-­‐ACK	  (“half-­‐open”)	  
-SHR	  
-RESP	  sent	  SYN-­‐ACK	  then	  FIN;	  no	  ORIG	  SYN	  
-OTH	  
-No	  SYN,	  not	  closed.	  Midstream	  traﬃc.	  Par&al	  connec&on.	  
+State	
+   Meaning	
+  
+S0	
+  
+Connec&on	
+  a)empt	
+  seen,	
+  no	
+  reply	
+  
+S1	
+  
+Connec&on	
+  established,	
+  not	
+  terminated	
+  (0	
+  byte	
+  counts)	
+  
+SF	
+  
+Normal	
+  establish	
+  &	
+  termina&on	
+  (>0	
+  byte	
+  counts)	
+  
+REJ	
+  
+Connec&on	
+  a)empt	
+  rejected	
+  
+S2	
+  
+Established,	
+  ORIG	
+  a)empts	
+  close,	
+  no	
+  reply	
+  from	
+  RESP.	
+  
+S3	
+  
+Established,	
+  RESP	
+  a)empts	
+  close,	
+  no	
+  reply	
+  from	
+  ORIG.	
+  
+RSTO	
+  
+Established,	
+  ORIG	
+  aborted	
+  (RST)	
+  
+RSTR	
+  
+Established,	
+  RESP	
+  aborted	
+  (RST)	
+  
+RSTOS0	
+   ORIG	
+  sent	
+  SYN	
+  then	
+  RST;	
+  no	
+  RESP	
+  SYN-­‐ACK	
+  
+RSTRH	
+   RESP	
+  sent	
+  SYN-­‐ACK	
+  then	
+  RST;	
+  no	
+  ORIG	
+  SYN	
+  
+SH	
+  
+ORIG	
+  sent	
+  SYN	
+  then	
+  FIN;	
+  no	
+  RESP	
+  SYN-­‐ACK	
+  (“half-­‐open”)	
+  
+SHR	
+  
+RESP	
+  sent	
+  SYN-­‐ACK	
+  then	
+  FIN;	
+  no	
+  ORIG	
+  SYN	
+  
+OTH	
+  
+No	
+  SYN,	
+  not	
+  closed.	
+  Midstream	
+  traﬃc.	
+  Par&al	
+  connec&on.	
+  
 conn.log: conn_state 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Measurement	  &mestamp	  
-ts_delta	  
-interval	   Time	  diﬀerence	  from	  previous	  
-measurement	  
-peer	  
-string	  
-Name	  of	  the	  Bro	  instance	  repor&ng	  loss	  
-gaps	  
-count	  
-ACKs	  seen	  without	  seeing	  data	  being	  
-ACKed	  
-acks	  
-count	  
-Total	  number	  of	  TCP	  ACKs	  
-percent_loss	   string	  
-gaps/acks,	  as	  a	  percentage.	  Es&mate	  of	  
-loss.	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Measurement	
+  &mestamp	
+  
+ts_delta	
+  
+interval	
+   Time	
+  diﬀerence	
+  from	
+  previous	
+  
+measurement	
+  
+peer	
+  
+string	
+  
+Name	
+  of	
+  the	
+  Bro	
+  instance	
+  repor&ng	
+  loss	
+  
+gaps	
+  
+count	
+  
+ACKs	
+  seen	
+  without	
+  seeing	
+  data	
+  being	
+  
+ACKed	
+  
+acks	
+  
+count	
+  
+Total	
+  number	
+  of	
+  TCP	
+  ACKs	
+  
+percent_loss	
+   string	
+  
+gaps/acks,	
+  as	
+  a	
+  percentage.	
+  Es&mate	
+  of	
+  
+loss.	
+  
 capture_loss.log 
 Estimate of packet loss 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  the	  DNS	  request	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-proto	  
-proto	  
-Protocol	  of	  DNS	  transac&on	  –	  TCP	  or	  UDP	  
-trans_id	  
-count	  
-16	  bit	  iden&ﬁer	  assigned	  by	  DNS	  client;	  responses	  match	  
-query	  
-string	  
-Domain	  name	  subject	  of	  the	  query	  
-qclass	  
-count	  
-Value	  specifying	  the	  query	  class	  
-qclass_name	  
-string	  
-Descrip&ve	  name	  of	  the	  query	  class	  (e.g.	  C_INTERNET)	  
-qtype	  
-count	  
-Value	  specifying	  the	  query	  type	  
-qtype_name	  
-string	  
-Name	  of	  the	  query	  type	  (e.g.	  A,	  AAAA,	  PTR)	  
-rcode	  
-count	  
-Response	  code	  value	  in	  the	  DNS	  response	  
-rcode_name	  
-string	  
-Descrip&ve	  name	  of	  the	  response	  code	  (e.g.	  NOERROR,	  
-NXDOMAIN)	  
-QR	  
-bool	  
-Was	  this	  a	  query	  (T)	  or	  a	  response	  (F)?	  
-AA	  
-bool	  
-T:	  	  server	  is	  authorita&ve	  for	  query	  
-TC	  
-bool	  
-T:	  message	  was	  truncated	  
-RD	  
-bool	  
-Recursion	  Desired.	  T	  =	  request	  recursive	  lookup	  of	  query	  
-RA	  
-bool	  
-Recursion	  Available.	  T	  =	  server	  supports	  recursive	  queries	  
-Z	  
-count	  
-Reserved	  ﬁeld,	  should	  be	  zero	  in	  all	  queries	  &	  responses	  
-answers	  
-vector	  
-List	  of	  resource	  descrip&ons	  in	  answer	  to	  the	  query	  
-TTLs	  
-vector	  
-Caching	  intervals	  of	  the	  answers	  
-rejected	  
-bool	  
-Whether	  the	  DNS	  query	  was	  rejected	  by	  the	  server	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  the	
+  DNS	
+  request	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+proto	
+  
+proto	
+  
+Protocol	
+  of	
+  DNS	
+  transac&on	
+  –	
+  TCP	
+  or	
+  UDP	
+  
+trans_id	
+  
+count	
+  
+16	
+  bit	
+  iden&ﬁer	
+  assigned	
+  by	
+  DNS	
+  client;	
+  responses	
+  match	
+  
+query	
+  
+string	
+  
+Domain	
+  name	
+  subject	
+  of	
+  the	
+  query	
+  
+qclass	
+  
+count	
+  
+Value	
+  specifying	
+  the	
+  query	
+  class	
+  
+qclass_name	
+  
+string	
+  
+Descrip&ve	
+  name	
+  of	
+  the	
+  query	
+  class	
+  (e.g.	
+  C_INTERNET)	
+  
+qtype	
+  
+count	
+  
+Value	
+  specifying	
+  the	
+  query	
+  type	
+  
+qtype_name	
+  
+string	
+  
+Name	
+  of	
+  the	
+  query	
+  type	
+  (e.g.	
+  A,	
+  AAAA,	
+  PTR)	
+  
+rcode	
+  
+count	
+  
+Response	
+  code	
+  value	
+  in	
+  the	
+  DNS	
+  response	
+  
+rcode_name	
+  
+string	
+  
+Descrip&ve	
+  name	
+  of	
+  the	
+  response	
+  code	
+  (e.g.	
+  NOERROR,	
+  
+NXDOMAIN)	
+  
+QR	
+  
+bool	
+  
+Was	
+  this	
+  a	
+  query	
+  (T)	
+  or	
+  a	
+  response	
+  (F)?	
+  
+AA	
+  
+bool	
+  
+T:	
+  	
+  server	
+  is	
+  authorita&ve	
+  for	
+  query	
+  
+TC	
+  
+bool	
+  
+T:	
+  message	
+  was	
+  truncated	
+  
+RD	
+  
+bool	
+  
+Recursion	
+  Desired.	
+  T	
+  =	
+  request	
+  recursive	
+  lookup	
+  of	
+  query	
+  
+RA	
+  
+bool	
+  
+Recursion	
+  Available.	
+  T	
+  =	
+  server	
+  supports	
+  recursive	
+  queries	
+  
+Z	
+  
+count	
+  
+Reserved	
+  ﬁeld,	
+  should	
+  be	
+  zero	
+  in	
+  all	
+  queries	
+  &	
+  responses	
+  
+answers	
+  
+vector	
+  
+List	
+  of	
+  resource	
+  descrip&ons	
+  in	
+  answer	
+  to	
+  the	
+  query	
+  
+TTLs	
+  
+vector	
+  
+Caching	
+  intervals	
+  of	
+  the	
+  answers	
+  
+rejected	
+  
+bool	
+  
+Whether	
+  the	
+  DNS	
+  query	
+  was	
+  rejected	
+  by	
+  the	
+  server	
+  
 dns.log 
 DNS query/response details 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  
-uid	  
-string	  
-Unique	  ID	  of	  Connec&on	  
-id.orig_h	  
-addr	  
-Origina&ng	  endpoint’s	  IP	  address	  (AKA	  ORIG)	  
-id.orig_p	  
-port	  
-Origina&ng	  endpoint’s	  TCP/UDP	  port	  (or	  ICMP	  code)	  
-id.resp_h	  
-addr	  
-Responding	  endpoint’s	  IP	  address	  (AKA	  RESP)	  
-id.resp_p	  
-port	  
-Responding	  endpoint’s	  TCP/UDP	  port	  (or	  ICMP	  code)	  
-proto	  
-proto	  
-Transport	  layer	  protocol	  of	  connec&on	  
-service	  
-string	  
-Dynamically	  detected	  applica&on	  protocol,	  if	  any	  
-dura=on	  
-interval	  
-Connec&on	  length	  
-orig_bytes	  
-count	  
-Originator	  payload	  bytes;	  from	  sequence	  numbers	  if	  TCP	  
-resp_bytes	  
-count	  
-Responder	  payload	  bytes;	  from	  sequence	  numbers	  if	  TCP	  
-conn_state	  
-string	  
-Connec&on	  state	  (see	  conn.log:	  conn_state	  table)	  
-local_orig	  
-bool	  
-If	  conn	  originated	  locally	  T;	  if	  remotely	  F.	  	  
-If	  Site::local_nets	  empty,	  always	  unset.	  
-missed_bytes	  
-count	  
-Number	  of	  missing	  bytes	  in	  content	  gaps	  
-history	  
-string	  
-Connec&on	  state	  history	  (see	  conn.log:	  history	  table)	  
-orig_pkts	  
-count	  
-Number	  of	  ORIG	  packets 
-orig_ip_bytes	  
-count	  
-Number	  of	  ORIG	  IP	  bytes	  (via	  IP	  total_length	  header	  ﬁeld)	  
-resp_pkts	  
-count	  
-Number	  of	  RESP	  packets	  
-resp_ip_bytes	   count	  
-Number	  of	  RESP	  IP	  bytes	  (via	  IP	  total_length	  header	  ﬁeld)	  
-tunnel_parents	   set	  
-If	  tunneled,	  connec&on	  UID	  of	  encapsula&ng	  parent	  (s)	  
-orig_cc	  
-string	  
-ORIG	  GeoIP	  Country	  Code	  
-resp_cc	  
-string	  
-RESP	  GeoIP	  Country	  Code	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  
+uid	
+  
+string	
+  
+Unique	
+  ID	
+  of	
+  Connec&on	
+  
+id.orig_h	
+  
+addr	
+  
+Origina&ng	
+  endpoint’s	
+  IP	
+  address	
+  (AKA	
+  ORIG)	
+  
+id.orig_p	
+  
+port	
+  
+Origina&ng	
+  endpoint’s	
+  TCP/UDP	
+  port	
+  (or	
+  ICMP	
+  code)	
+  
+id.resp_h	
+  
+addr	
+  
+Responding	
+  endpoint’s	
+  IP	
+  address	
+  (AKA	
+  RESP)	
+  
+id.resp_p	
+  
+port	
+  
+Responding	
+  endpoint’s	
+  TCP/UDP	
+  port	
+  (or	
+  ICMP	
+  code)	
+  
+proto	
+  
+proto	
+  
+Transport	
+  layer	
+  protocol	
+  of	
+  connec&on	
+  
+service	
+  
+string	
+  
+Dynamically	
+  detected	
+  applica&on	
+  protocol,	
+  if	
+  any	
+  
+dura=on	
+  
+interval	
+  
+Connec&on	
+  length	
+  
+orig_bytes	
+  
+count	
+  
+Originator	
+  payload	
+  bytes;	
+  from	
+  sequence	
+  numbers	
+  if	
+  TCP	
+  
+resp_bytes	
+  
+count	
+  
+Responder	
+  payload	
+  bytes;	
+  from	
+  sequence	
+  numbers	
+  if	
+  TCP	
+  
+conn_state	
+  
+string	
+  
+Connec&on	
+  state	
+  (see	
+  conn.log:	
+  conn_state	
+  table)	
+  
+local_orig	
+  
+bool	
+  
+If	
+  conn	
+  originated	
+  locally	
+  T;	
+  if	
+  remotely	
+  F.	
+  	
+  
+If	
+  Site::local_nets	
+  empty,	
+  always	
+  unset.	
+  
+missed_bytes	
+  
+count	
+  
+Number	
+  of	
+  missing	
+  bytes	
+  in	
+  content	
+  gaps	
+  
+history	
+  
+string	
+  
+Connec&on	
+  state	
+  history	
+  (see	
+  conn.log:	
+  history	
+  table)	
+  
+orig_pkts	
+  
+count	
+  
+Number	
+  of	
+  ORIG	
+  packets 
+orig_ip_bytes	
+  
+count	
+  
+Number	
+  of	
+  ORIG	
+  IP	
+  bytes	
+  (via	
+  IP	
+  total_length	
+  header	
+  ﬁeld)	
+  
+resp_pkts	
+  
+count	
+  
+Number	
+  of	
+  RESP	
+  packets	
+  
+resp_ip_bytes	
+   count	
+  
+Number	
+  of	
+  RESP	
+  IP	
+  bytes	
+  (via	
+  IP	
+  total_length	
+  header	
+  ﬁeld)	
+  
+tunnel_parents	
+   set	
+  
+If	
+  tunneled,	
+  connec&on	
+  UID	
+  of	
+  encapsula&ng	
+  parent	
+  (s)	
+  
+orig_cc	
+  
+string	
+  
+ORIG	
+  GeoIP	
+  Country	
+  Code	
+  
+resp_cc	
+  
+string	
+  
+RESP	
+  GeoIP	
+  Country	
+  Code	
+  
 conn.log 
 IP, TCP, UDP and ICMP connection details 
-LeQer	   Meaning	  
-S	  
-a	  SYN	  without	  the	  ACK	  bit	  set	  
-H	  
-a	  SYN-­‐ACK	  (“handshake”)	  
-A	  
-a	  pure	  ACK	  
-D	  
-packet	  with	  payload	  (“data”)	  
-F	  
-packet	  with	  FIN	  bit	  set	  
-R	  
-packet	  with	  RST	  bit	  set	  
-C	  
-packet	  with	  a	  bad	  checksum	  
-I	  
-Inconsistent	  packet	  (Both	  SYN	  &	  RST)	  
+LeQer	
+   Meaning	
+  
+S	
+  
+a	
+  SYN	
+  without	
+  the	
+  ACK	
+  bit	
+  set	
+  
+H	
+  
+a	
+  SYN-­‐ACK	
+  (“handshake”)	
+  
+A	
+  
+a	
+  pure	
+  ACK	
+  
+D	
+  
+packet	
+  with	
+  payload	
+  (“data”)	
+  
+F	
+  
+packet	
+  with	
+  FIN	
+  bit	
+  set	
+  
+R	
+  
+packet	
+  with	
+  RST	
+  bit	
+  set	
+  
+C	
+  
+packet	
+  with	
+  a	
+  bad	
+  checksum	
+  
+I	
+  
+Inconsistent	
+  packet	
+  (Both	
+  SYN	
+  &	
+  RST)	
+  
 conn.log: history 
 Orig UPPERCASE, Resp lowercase, uniq-ed 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  request	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-mac	  
-string	  
-Client’s	  hardware	  address	  
-assigned_ip	  
-addr	  
-Client’s	  actual	  assigned	  IP	  address	  
-lease_=me	  
-interval	   IP	  address	  lease	  &me	  
-trans_id	  
-count	  
-Iden&ﬁer	  assigned	  by	  the	  client;	  responses	  
-match	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  request	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+mac	
+  
+string	
+  
+Client’s	
+  hardware	
+  address	
+  
+assigned_ip	
+  
+addr	
+  
+Client’s	
+  actual	
+  assigned	
+  IP	
+  address	
+  
+lease_=me	
+  
+interval	
+   IP	
+  address	
+  lease	
+  &me	
+  
+trans_id	
+  
+count	
+  
+Iden&ﬁer	
+  assigned	
+  by	
+  the	
+  client;	
+  responses	
+  
+match	
+  
 dhcp.log 
 DHCP lease activity 
-Version:	  2.0	  
-1	  
-©	  Broala	  LLC.	  	  
+Version:	
+  2.0	
+  
+1	
+  
+©	
+  Broala	
+  LLC.	
+  	
+  
 Bro 2.3 Logs 
 www.broala.com 
 36
 44
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  when	  ﬁle	  was	  ﬁrst	  seen	  
-fuid	  
-string	  
-Unique	  iden&ﬁer	  for	  a	  single	  ﬁle	  
-tx_hosts	  
-set	  
-if	  transferred	  via	  network,	  host(s)	  that	  sourced	  the	  data	  
-rx_hosts	  
-set	  
-if	  transferred	  via	  network,	  host(s)	  that	  received	  the	  data	  
-conn_uids	  
-set	  
-Connec&on	  UID(s)	  over	  which	  the	  ﬁle	  was	  transferred	  
-source	  
-string	  
-An	  iden&ﬁca&on	  of	  the	  source	  of	  the	  ﬁle	  data	  
-depth	  
-count	  
-Depth	  of	  ﬁle	  related	  to	  source;	  eg:	  SMTP	  MIME	  
-a)achment	  depth;	  HTTP	  depth	  of	  the	  request	  
-analyzers	  
-set	  
-Set	  of	  analysis	  types	  done	  during	  ﬁle	  analysis	  
-mime_type	  
-string	  
-The	  ﬁle	  type,	  as	  determined	  by	  Bro’s	  signatures	  
-ﬁlename	  
-string	  
-If	  available,	  ﬁlename	  from	  source;	  frequently	  the	  
-“Content-­‐Disposi&on”	  headers	  in	  network	  protocols	  
-dura=on	  
-interval	   The	  dura&on	  the	  ﬁle	  was	  analyzed	  for	  
-local_orig	  
-bool	  
-If	  transferred	  via	  network,	  did	  data	  originate	  locally?	  
-is_orig	  
-bool	  
-If	  transferred	  via	  network,	  was	  ﬁle	  sent	  by	  the	  originator?	  
-seen_bytes	  
-count	  
-Number	  of	  bytes	  provided	  to	  ﬁle	  analysis	  engine	  
-total_bytes	  
-count	  
-Total	  number	  of	  bytes	  that	  should	  comprise	  the	  ﬁle	  
-missing_bytes	  
-count	  
-Number	  of	  bytes	  in	  the	  ﬁle	  stream	  missed;	  eg:	  dropped	  
-packets	  
-overﬂow_bytes	  
-count	  
-Number	  of	  not	  all-­‐in-­‐sequence	  bytes	  in	  the	  ﬁle	  stream	  
-delivered	  to	  ﬁle	  analyzers	  due	  to	  reassembly	  buﬀer	  
-overﬂow	  
-=medout	  
-bool	  
-If	  the	  ﬁle	  analysis	  &me	  out	  at	  least	  once	  per	  ﬁle	  
-parent_fuid	  
-string	  
-ID	  associated	  with	  a	  container	  ﬁle	  from	  which	  this	  one	  
-was	  extracted	  as	  a	  part	  of	  the	  analysis	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  when	
+  ﬁle	
+  was	
+  ﬁrst	
+  seen	
+  
+fuid	
+  
+string	
+  
+Unique	
+  iden&ﬁer	
+  for	
+  a	
+  single	
+  ﬁle	
+  
+tx_hosts	
+  
+set	
+  
+if	
+  transferred	
+  via	
+  network,	
+  host(s)	
+  that	
+  sourced	
+  the	
+  data	
+  
+rx_hosts	
+  
+set	
+  
+if	
+  transferred	
+  via	
+  network,	
+  host(s)	
+  that	
+  received	
+  the	
+  data	
+  
+conn_uids	
+  
+set	
+  
+Connec&on	
+  UID(s)	
+  over	
+  which	
+  the	
+  ﬁle	
+  was	
+  transferred	
+  
+source	
+  
+string	
+  
+An	
+  iden&ﬁca&on	
+  of	
+  the	
+  source	
+  of	
+  the	
+  ﬁle	
+  data	
+  
+depth	
+  
+count	
+  
+Depth	
+  of	
+  ﬁle	
+  related	
+  to	
+  source;	
+  eg:	
+  SMTP	
+  MIME	
+  
+a)achment	
+  depth;	
+  HTTP	
+  depth	
+  of	
+  the	
+  request	
+  
+analyzers	
+  
+set	
+  
+Set	
+  of	
+  analysis	
+  types	
+  done	
+  during	
+  ﬁle	
+  analysis	
+  
+mime_type	
+  
+string	
+  
+The	
+  ﬁle	
+  type,	
+  as	
+  determined	
+  by	
+  Bro’s	
+  signatures	
+  
+ﬁlename	
+  
+string	
+  
+If	
+  available,	
+  ﬁlename	
+  from	
+  source;	
+  frequently	
+  the	
+  
+“Content-­‐Disposi&on”	
+  headers	
+  in	
+  network	
+  protocols	
+  
+dura=on	
+  
+interval	
+   The	
+  dura&on	
+  the	
+  ﬁle	
+  was	
+  analyzed	
+  for	
+  
+local_orig	
+  
+bool	
+  
+If	
+  transferred	
+  via	
+  network,	
+  did	
+  data	
+  originate	
+  locally?	
+  
+is_orig	
+  
+bool	
+  
+If	
+  transferred	
+  via	
+  network,	
+  was	
+  ﬁle	
+  sent	
+  by	
+  the	
+  originator?	
+  
+seen_bytes	
+  
+count	
+  
+Number	
+  of	
+  bytes	
+  provided	
+  to	
+  ﬁle	
+  analysis	
+  engine	
+  
+total_bytes	
+  
+count	
+  
+Total	
+  number	
+  of	
+  bytes	
+  that	
+  should	
+  comprise	
+  the	
+  ﬁle	
+  
+missing_bytes	
+  
+count	
+  
+Number	
+  of	
+  bytes	
+  in	
+  the	
+  ﬁle	
+  stream	
+  missed;	
+  eg:	
+  dropped	
+  
+packets	
+  
+overﬂow_bytes	
+  
+count	
+  
+Number	
+  of	
+  not	
+  all-­‐in-­‐sequence	
+  bytes	
+  in	
+  the	
+  ﬁle	
+  stream	
+  
+delivered	
+  to	
+  ﬁle	
+  analyzers	
+  due	
+  to	
+  reassembly	
+  buﬀer	
+  
+overﬂow	
+  
+=medout	
+  
+bool	
+  
+If	
+  the	
+  ﬁle	
+  analysis	
+  &me	
+  out	
+  at	
+  least	
+  once	
+  per	
+  ﬁle	
+  
+parent_fuid	
+  
+string	
+  
+ID	
+  associated	
+  with	
+  a	
+  container	
+  ﬁle	
+  from	
+  which	
+  this	
+  one	
+  
+was	
+  extracted	
+  as	
+  a	
+  part	
+  of	
+  the	
+  analysis	
+  
 md5/sha1/
-sha256	  
-string	  
-MD5/SHA1/SHA256	  hash	  of	  ﬁle,	  if	  enabled	  
-extracted	  
-string	  
-Local	  ﬁlename	  of	  extracted	  ﬁles,	  if	  enabled	  
+sha256	
+  
+string	
+  
+MD5/SHA1/SHA256	
+  hash	
+  of	
+  ﬁle,	
+  if	
+  enabled	
+  
+extracted	
+  
+string	
+  
+Local	
+  ﬁlename	
+  of	
+  extracted	
+  ﬁles,	
+  if	
+  enabled	
+  
 files.log 
 File analysis results 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-fc_request	  
-string	  
-The	  name	  of	  the	  request	  func&on	  message	  
-fc_reply	  
-string	  
-The	  name	  of	  the	  reply	  func&on	  message	  
-iin	  
-count	  
-Response’s	  “internal	  indica&on	  number”	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+fc_request	
+  
+string	
+  
+The	
+  name	
+  of	
+  the	
+  request	
+  func&on	
+  message	
+  
+fc_reply	
+  
+string	
+  
+The	
+  name	
+  of	
+  the	
+  reply	
+  func&on	
+  message	
+  
+iin	
+  
+count	
+  
+Response’s	
+  “internal	
+  indica&on	
+  number”	
+  
 dnp3.log 
 Distributed Network Protocol (industrial control) 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-nick	  
-string	   Nickname	  given	  for	  this	  connec&on	  
-user	  
-string	   Username	  given	  for	  this	  connec&on	  
-command	  
-string	   Command	  given	  by	  the	  client	  
-value	  
-string	   Value	  for	  the	  command	  given	  by	  the	  client	  
-addl	  
-string	   Any	  addi&onal	  data	  for	  the	  command	  
-dcc_ﬁle_name	  
-string	   DCC	  ﬁlename	  requested	  
-dcc_ﬁle_size	  
-count	   Size	  of	  the	  DCC	  transfer	  as	  indicated	  by	  the	  sender	  
-dcc_mime_type	   string	   Sniﬀed	  mime	  type	  of	  the	  ﬁle	  
-fuid	  
-string	   File	  unique	  ID	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+nick	
+  
+string	
+   Nickname	
+  given	
+  for	
+  this	
+  connec&on	
+  
+user	
+  
+string	
+   Username	
+  given	
+  for	
+  this	
+  connec&on	
+  
+command	
+  
+string	
+   Command	
+  given	
+  by	
+  the	
+  client	
+  
+value	
+  
+string	
+   Value	
+  for	
+  the	
+  command	
+  given	
+  by	
+  the	
+  client	
+  
+addl	
+  
+string	
+   Any	
+  addi&onal	
+  data	
+  for	
+  the	
+  command	
+  
+dcc_ﬁle_name	
+  
+string	
+   DCC	
+  ﬁlename	
+  requested	
+  
+dcc_ﬁle_size	
+  
+count	
+   Size	
+  of	
+  the	
+  DCC	
+  transfer	
+  as	
+  indicated	
+  by	
+  the	
+  sender	
+  
+dcc_mime_type	
+   string	
+   Sniﬀed	
+  mime	
+  type	
+  of	
+  the	
+  ﬁle	
+  
+fuid	
+  
+string	
+   File	
+  unique	
+  ID	
+  
 irc.log 
 IRC communication details 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Command	  &mestamp	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-user	  
-string	  
-Username	  for	  current	  FTP	  session	  
-password	  
-string	  
-Password	  for	  current	  FTP	  session	  
-command	  
-string	  
-Command	  issued	  by	  the	  client	  
-arg	  
-string	  
-Command	  argument	  if	  present	  
-mime_type	  
-string	  
-Libmagic	  sniﬀed	  ﬁle	  type	  if	  there’s	  a	  ﬁle	  transfer	  
-ﬁle_size	  
-count	  
-Size	  of	  transferred	  ﬁle	  
-reply_code	  
-count	  
-Reply	  code	  from	  server	  in	  response	  to	  the	  command	  
-reply_msg	  
-string	  
-Reply	  message	  from	  server	  in	  response	  to	  the	  command	  
-data_channel	  
-record	  
-Informa&on	  about	  the	  data	  channel	  (orig,	  resp,	  is	  passive)	  
-fuid	  
-string	  
-File	  unique	  ID	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Command	
+  &mestamp	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+user	
+  
+string	
+  
+Username	
+  for	
+  current	
+  FTP	
+  session	
+  
+password	
+  
+string	
+  
+Password	
+  for	
+  current	
+  FTP	
+  session	
+  
+command	
+  
+string	
+  
+Command	
+  issued	
+  by	
+  the	
+  client	
+  
+arg	
+  
+string	
+  
+Command	
+  argument	
+  if	
+  present	
+  
+mime_type	
+  
+string	
+  
+Libmagic	
+  sniﬀed	
+  ﬁle	
+  type	
+  if	
+  there’s	
+  a	
+  ﬁle	
+  transfer	
+  
+ﬁle_size	
+  
+count	
+  
+Size	
+  of	
+  transferred	
+  ﬁle	
+  
+reply_code	
+  
+count	
+  
+Reply	
+  code	
+  from	
+  server	
+  in	
+  response	
+  to	
+  the	
+  command	
+  
+reply_msg	
+  
+string	
+  
+Reply	
+  message	
+  from	
+  server	
+  in	
+  response	
+  to	
+  the	
+  command	
+  
+data_channel	
+  
+record	
+  
+Informa&on	
+  about	
+  the	
+  data	
+  channel	
+  (orig,	
+  resp,	
+  is	
+  passive)	
+  
+fuid	
+  
+string	
+  
+File	
+  unique	
+  ID	
+  
 ftp.log 
 FTP request/reply details 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  hit	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-fuid	  
-string	  
-The	  UID	  for	  a	  ﬁle	  associated	  with	  this	  hit,	  if	  any	  
-ﬁle_mime_type	  
-string	  
-A	  mime	  type	  if	  the	  hit	  is	  related	  to	  a	  ﬁle	  
-ﬁle_desc	  
-string	  
-Addi&onal	  context	  for	  ﬁle,	  if	  available	  
-seen.indicator	  
-string	  
-The	  intelligence	  indicator	  
-seen.indicator_type	   string	  
-The	  type	  of	  data	  the	  indicator	  represents	  
-seen.where	  
-string	  
-Where	  the	  data	  was	  discovered	  
-sources	  
-set	  
-Sources	  which	  supplied	  data	  for	  this	  match	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  hit	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+fuid	
+  
+string	
+  
+The	
+  UID	
+  for	
+  a	
+  ﬁle	
+  associated	
+  with	
+  this	
+  hit,	
+  if	
+  any	
+  
+ﬁle_mime_type	
+  
+string	
+  
+A	
+  mime	
+  type	
+  if	
+  the	
+  hit	
+  is	
+  related	
+  to	
+  a	
+  ﬁle	
+  
+ﬁle_desc	
+  
+string	
+  
+Addi&onal	
+  context	
+  for	
+  ﬁle,	
+  if	
+  available	
+  
+seen.indicator	
+  
+string	
+  
+The	
+  intelligence	
+  indicator	
+  
+seen.indicator_type	
+   string	
+  
+The	
+  type	
+  of	
+  data	
+  the	
+  indicator	
+  represents	
+  
+seen.where	
+  
+string	
+  
+Where	
+  the	
+  data	
+  was	
+  discovered	
+  
+sources	
+  
+set	
+  
+Sources	
+  which	
+  supplied	
+  data	
+  for	
+  this	
+  match	
+  
 intel.log 
 Hits on indicators from the intel framework 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  request	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-trans_depth	  
-count	  
-Pipelined	  depth	  into	  the	  connec&on	  
-method	  
-string	  
-HTTP	  Request	  verb:	  GET,	  POST,	  HEAD,	  etc.	  
-host	  
-string	  
-Value	  of	  the	  HOST	  header	  
-uri	  
-string	  
-URI	  used	  in	  the	  request	  
-referrer	  
-string	  
-Value	  of	  the	  “referer”	  header	  
-user_agent	  
-string	  
-Value	  of	  the	  User-­‐Agent	  header	  
-request_	  
-body_len	  
-count	  
-Actual	  uncompressed	  content	  size	  of	  the	  data	  
-transferred	  from	  the	  client	  
-response_	  
-body_len	  
-count	  
-Actual	  uncompressed	  content	  size	  of	  the	  data	  
-transferred	  from	  the	  server	  
-status_code	  
-count	  
-Status	  code	  returned	  by	  the	  server	  
-status_msg	  
-string	  
-Status	  message	  returned	  by	  the	  server	  
-info_code	  
-count	  
-Last	  seen	  1xx	  info	  reply	  code	  by	  server	  
-info_msg	  
-string	  
-Last	  seen	  1xx	  info	  reply	  message	  by	  server	  
-ﬁlename	  
-string	  
-Via	  the	  Content-­‐Disposi&on	  server	  header	  
-tags	  
-set	  
-Indicators	  of	  various	  a)ributes	  discovered	  
-username	  
-string	  
-If	  basic-­‐auth	  is	  performed	  for	  the	  request	  
-password	  
-string	  
-If	  basic-­‐auth	  is	  performed	  for	  the	  request	  
-proxied	  
-set	  
-Headers	  that	  might	  indicate	  a	  proxied	  request	  
-orig_fuids	  
-vector	  
-An	  ordered	  vector	  of	  ﬁle	  unique	  IDs	  from	  orig	  
-orig_mime_types	   vector	  
-An	  ordered	  vector	  of	  mime	  types	  from	  orig	  
-resp_fuids	  
-vector	  
-An	  ordered	  vector	  of	  ﬁle	  unique	  IDs	  from	  resp	  
-resp_mime_types	   vector	  
-An	  ordered	  vector	  of	  mime	  types	  from	  resp	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  request	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+trans_depth	
+  
+count	
+  
+Pipelined	
+  depth	
+  into	
+  the	
+  connec&on	
+  
+method	
+  
+string	
+  
+HTTP	
+  Request	
+  verb:	
+  GET,	
+  POST,	
+  HEAD,	
+  etc.	
+  
+host	
+  
+string	
+  
+Value	
+  of	
+  the	
+  HOST	
+  header	
+  
+uri	
+  
+string	
+  
+URI	
+  used	
+  in	
+  the	
+  request	
+  
+referrer	
+  
+string	
+  
+Value	
+  of	
+  the	
+  “referer”	
+  header	
+  
+user_agent	
+  
+string	
+  
+Value	
+  of	
+  the	
+  User-­‐Agent	
+  header	
+  
+request_	
+  
+body_len	
+  
+count	
+  
+Actual	
+  uncompressed	
+  content	
+  size	
+  of	
+  the	
+  data	
+  
+transferred	
+  from	
+  the	
+  client	
+  
+response_	
+  
+body_len	
+  
+count	
+  
+Actual	
+  uncompressed	
+  content	
+  size	
+  of	
+  the	
+  data	
+  
+transferred	
+  from	
+  the	
+  server	
+  
+status_code	
+  
+count	
+  
+Status	
+  code	
+  returned	
+  by	
+  the	
+  server	
+  
+status_msg	
+  
+string	
+  
+Status	
+  message	
+  returned	
+  by	
+  the	
+  server	
+  
+info_code	
+  
+count	
+  
+Last	
+  seen	
+  1xx	
+  info	
+  reply	
+  code	
+  by	
+  server	
+  
+info_msg	
+  
+string	
+  
+Last	
+  seen	
+  1xx	
+  info	
+  reply	
+  message	
+  by	
+  server	
+  
+ﬁlename	
+  
+string	
+  
+Via	
+  the	
+  Content-­‐Disposi&on	
+  server	
+  header	
+  
+tags	
+  
+set	
+  
+Indicators	
+  of	
+  various	
+  a)ributes	
+  discovered	
+  
+username	
+  
+string	
+  
+If	
+  basic-­‐auth	
+  is	
+  performed	
+  for	
+  the	
+  request	
+  
+password	
+  
+string	
+  
+If	
+  basic-­‐auth	
+  is	
+  performed	
+  for	
+  the	
+  request	
+  
+proxied	
+  
+set	
+  
+Headers	
+  that	
+  might	
+  indicate	
+  a	
+  proxied	
+  request	
+  
+orig_fuids	
+  
+vector	
+  
+An	
+  ordered	
+  vector	
+  of	
+  ﬁle	
+  unique	
+  IDs	
+  from	
+  orig	
+  
+orig_mime_types	
+   vector	
+  
+An	
+  ordered	
+  vector	
+  of	
+  mime	
+  types	
+  from	
+  orig	
+  
+resp_fuids	
+  
+vector	
+  
+An	
+  ordered	
+  vector	
+  of	
+  ﬁle	
+  unique	
+  IDs	
+  from	
+  resp	
+  
+resp_mime_types	
+   vector	
+  
+An	
+  ordered	
+  vector	
+  of	
+  mime	
+  types	
+  from	
+  resp	
+  
 http.log 
 HTTP request/reply details 
-Version:	  2.0	  
-2	  
-©	  Broala	  LLC.	  	  
+Version:	
+  2.0	
+  
+2	
+  
+©	
+  Broala	
+  LLC.	
+  	
+  
 Bro 2.3 Logs 
 www.broala.com 
 37
 45
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-fuid	  
-string	  
-File	  unique	  iden&ﬁer	  
-ﬁle_mime_type	   string	  
-The	  ﬁle	  type,	  as	  determined	  by	  Bro’s	  
-signatures	  
-ﬁle_desc	  
-string	  
-Addi&onal	  context	  for	  ﬁle,	  if	  available	  
-proto	  
-proto	  
-Transport	  protocol	  
-note	  
-string	  
-The	  type	  of	  the	  no&ce	  
-msg	  
-string	  
-Human	  readable	  message	  for	  the	  no&ce	  
-sub	  
-string	  
-Sub-­‐message	  for	  the	  no&ce	  
-src	  
-addr	  
-Source	  address	  
-dst	  
-addr	  
-Des&na&on	  address	  
-p	  
-port	  
-Associated	  port,	  if	  any	  
-n	  
-count	  
-Associated	  count	  or	  status	  code	  
-peer_descr	  
-string	  
-Descrip&on	  for	  peer	  that	  raised	  this	  no&ce	  
-ac=ons	  
-set	  
-Ac&ons	  applied	  to	  this	  no&ce	  
-suppress_for	  
-interval	   Length	  of	  &me	  dupes	  should	  be	  suppressed	  
-dropped	  
-bool	  
-If	  the	  src	  IP	  was	  blocked	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+fuid	
+  
+string	
+  
+File	
+  unique	
+  iden&ﬁer	
+  
+ﬁle_mime_type	
+   string	
+  
+The	
+  ﬁle	
+  type,	
+  as	
+  determined	
+  by	
+  Bro’s	
+  
+signatures	
+  
+ﬁle_desc	
+  
+string	
+  
+Addi&onal	
+  context	
+  for	
+  ﬁle,	
+  if	
+  available	
+  
+proto	
+  
+proto	
+  
+Transport	
+  protocol	
+  
+note	
+  
+string	
+  
+The	
+  type	
+  of	
+  the	
+  no&ce	
+  
+msg	
+  
+string	
+  
+Human	
+  readable	
+  message	
+  for	
+  the	
+  no&ce	
+  
+sub	
+  
+string	
+  
+Sub-­‐message	
+  for	
+  the	
+  no&ce	
+  
+src	
+  
+addr	
+  
+Source	
+  address	
+  
+dst	
+  
+addr	
+  
+Des&na&on	
+  address	
+  
+p	
+  
+port	
+  
+Associated	
+  port,	
+  if	
+  any	
+  
+n	
+  
+count	
+  
+Associated	
+  count	
+  or	
+  status	
+  code	
+  
+peer_descr	
+  
+string	
+  
+Descrip&on	
+  for	
+  peer	
+  that	
+  raised	
+  this	
+  no&ce	
+  
+ac=ons	
+  
+set	
+  
+Ac&ons	
+  applied	
+  to	
+  this	
+  no&ce	
+  
+suppress_for	
+  
+interval	
+   Length	
+  of	
+  &me	
+  dupes	
+  should	
+  be	
+  suppressed	
+  
+dropped	
+  
+bool	
+  
+If	
+  the	
+  src	
+  IP	
+  was	
+  blocked	
+  
 notice.log 
 Logged notices 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  when	  the	  message	  was	  ﬁrst	  seen	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-trans_depth	  
-count	  
-Transac&on	  depth	  if	  there	  are	  mul&ple	  msgs	  
-helo	  
-string	  
-Contents	  of	  the	  HELO	  header	  
-mailfrom	  
-string	  
-Contents	  of	  the	  MAIL	  FROM	  header	  
-rcpQo	  
-set	  
-Contents	  of	  the	  RCPT	  TO	  header	  
-date	  
-string	  
-Contents	  of	  the	  DATE	  header	  
-from	  
-string	  
-Contents	  of	  the	  FROM	  header	  
-to	  
-set	  
-Contents	  of	  the	  TO	  header	  
-reply_to	  
-string	  
-Contents	  of	  the	  ReplyTo	  header	  
-msg_id	  
-string	  
-Contents	  of	  the	  MsgID	  header	  
-in_reply_to	  
-string	  
-Contents	  of	  the	  In-­‐Reply-­‐To	  header	  
-subject	  
-string	  
-Contents	  of	  the	  Subject	  header	  
-x_origina=ng_ip	   addr	  
-Contents	  of	  the	  X-­‐Origina&ng-­‐IP	  header	  
-ﬁrst_received	  
-string	  
-Contents	  of	  the	  ﬁrst	  Received	  header	  
-second_received	   string	  
-Contents	  of	  the	  second	  Received	  header	  
-last_reply	  
-string	  
-Last	  server	  to	  client	  message	  
-path	  
-vector	  
-Message	  transmission	  path,	  from	  headers	  
-user_agent	  
-string	  
-Value	  of	  the	  client	  User-­‐Agent	  header	  
-fuids	  
-vector	  
-File	  unique	  IDs	  seen	  a)ached	  to	  this	  msg	  
-is_webmail	  
-bool	  
-If	  the	  message	  was	  sent	  via	  webmail	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  when	
+  the	
+  message	
+  was	
+  ﬁrst	
+  seen	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+trans_depth	
+  
+count	
+  
+Transac&on	
+  depth	
+  if	
+  there	
+  are	
+  mul&ple	
+  msgs	
+  
+helo	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  HELO	
+  header	
+  
+mailfrom	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  MAIL	
+  FROM	
+  header	
+  
+rcpQo	
+  
+set	
+  
+Contents	
+  of	
+  the	
+  RCPT	
+  TO	
+  header	
+  
+date	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  DATE	
+  header	
+  
+from	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  FROM	
+  header	
+  
+to	
+  
+set	
+  
+Contents	
+  of	
+  the	
+  TO	
+  header	
+  
+reply_to	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  ReplyTo	
+  header	
+  
+msg_id	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  MsgID	
+  header	
+  
+in_reply_to	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  In-­‐Reply-­‐To	
+  header	
+  
+subject	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  Subject	
+  header	
+  
+x_origina=ng_ip	
+   addr	
+  
+Contents	
+  of	
+  the	
+  X-­‐Origina&ng-­‐IP	
+  header	
+  
+ﬁrst_received	
+  
+string	
+  
+Contents	
+  of	
+  the	
+  ﬁrst	
+  Received	
+  header	
+  
+second_received	
+   string	
+  
+Contents	
+  of	
+  the	
+  second	
+  Received	
+  header	
+  
+last_reply	
+  
+string	
+  
+Last	
+  server	
+  to	
+  client	
+  message	
+  
+path	
+  
+vector	
+  
+Message	
+  transmission	
+  path,	
+  from	
+  headers	
+  
+user_agent	
+  
+string	
+  
+Value	
+  of	
+  the	
+  client	
+  User-­‐Agent	
+  header	
+  
+fuids	
+  
+vector	
+  
+File	
+  unique	
+  IDs	
+  seen	
+  a)ached	
+  to	
+  this	
+  msg	
+  
+is_webmail	
+  
+bool	
+  
+If	
+  the	
+  message	
+  was	
+  sent	
+  via	
+  webmail	
+  
 smtp.log 
 SMTP transactions 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  the	  authen&ca&on	  a)empt	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-username	  
-string	  
-The	  username	  of	  the	  user	  a)emp&ng	  to	  auth	  
-mac	  
-string	  
-The	  MAC	  address	  of	  the	  client	  (e.g.	  for	  wireless)	  
-remote_ip	  
-addr	  
-The	  IP	  address	  of	  the	  client	  (e.g.	  for	  VPN)	  
-connect_info	   string	  
-Addi&onal	  connect	  informa&on,	  if	  available	  
-result	  
-string	  
-Whether	  the	  a)empt	  succeeded	  or	  failed	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  the	
+  authen&ca&on	
+  a)empt	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+username	
+  
+string	
+  
+The	
+  username	
+  of	
+  the	
+  user	
+  a)emp&ng	
+  to	
+  auth	
+  
+mac	
+  
+string	
+  
+The	
+  MAC	
+  address	
+  of	
+  the	
+  client	
+  (e.g.	
+  for	
+  wireless)	
+  
+remote_ip	
+  
+addr	
+  
+The	
+  IP	
+  address	
+  of	
+  the	
+  client	
+  (e.g.	
+  for	
+  VPN)	
+  
+connect_info	
+   string	
+  
+Addi&onal	
+  connect	
+  informa&on,	
+  if	
+  available	
+  
+result	
+  
+string	
+  
+Whether	
+  the	
+  a)empt	
+  succeeded	
+  or	
+  failed	
+  
 radius.log 
 RADIUS authentication attempts 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  request	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-version	  
-count	  
-Protocol	  version	  of	  SOCKS	  
-user	  
-string	  
-Username	  for	  the	  proxy,	  if	  available	  
-status	  
-string	  
-Server	  status	  for	  the	  a)empt	  using	  proxy	  
-request.host	  
-addr	  
-Client	  requested	  address	  
-request.name	   string	  
-Client	  requested	  name	  
-request_p	  
-port	  
-Client	  requested	  port	  
-bound.host	  
-addr	  
-Server	  bound	  address	  
-bound.name	  
-string	  
-Server	  bound	  name	  
-bound_p	  
-port	  
-Server	  bound	  port	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  request	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+version	
+  
+count	
+  
+Protocol	
+  version	
+  of	
+  SOCKS	
+  
+user	
+  
+string	
+  
+Username	
+  for	
+  the	
+  proxy,	
+  if	
+  available	
+  
+status	
+  
+string	
+  
+Server	
+  status	
+  for	
+  the	
+  a)empt	
+  using	
+  proxy	
+  
+request.host	
+  
+addr	
+  
+Client	
+  requested	
+  address	
+  
+request.name	
+   string	
+  
+Client	
+  requested	
+  name	
+  
+request_p	
+  
+port	
+  
+Client	
+  requested	
+  port	
+  
+bound.host	
+  
+addr	
+  
+Server	
+  bound	
+  address	
+  
+bound.name	
+  
+string	
+  
+Server	
+  bound	
+  name	
+  
+bound_p	
+  
+port	
+  
+Server	
+  bound	
+  port	
+  
 socks.log 
 SOCKS proxy requests 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  the	  detec&on	  
-host	  
-addr	  
-IP	  address	  running	  the	  sopware	  
-host_p	  
-port	  
-Port	  on	  which	  the	  sopware	  is	  running	  (for	  servers)	  
-so[ware_type	  
-string	  
-Type	  of	  sopware	  (e.g.	  HTTP::SERVER)	  
-name	  
-string	  
-Name	  of	  the	  sopware	  
-version.major	  
-count	  
-Major	  version	  number	  of	  the	  sopware	  
-version.minor	  
-count	  
-Minor	  version	  number	  of	  the	  sopware	  
-version.minor2	  
-count	  
-Minor	  subversion	  number	  of	  the	  sopware	  
-version.minor3	  
-count	  
-Minor	  update	  number	  of	  the	  sopware	  
-version.addl	  
-string	  
-Addi&onal	  version	  string	  (e.g.	  beta42)	  
-unparsed_version	  
-string	  
-The	  full,	  unparsed	  version	  of	  the	  sopware	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  the	
+  detec&on	
+  
+host	
+  
+addr	
+  
+IP	
+  address	
+  running	
+  the	
+  sopware	
+  
+host_p	
+  
+port	
+  
+Port	
+  on	
+  which	
+  the	
+  sopware	
+  is	
+  running	
+  (for	
+  servers)	
+  
+so[ware_type	
+  
+string	
+  
+Type	
+  of	
+  sopware	
+  (e.g.	
+  HTTP::SERVER)	
+  
+name	
+  
+string	
+  
+Name	
+  of	
+  the	
+  sopware	
+  
+version.major	
+  
+count	
+  
+Major	
+  version	
+  number	
+  of	
+  the	
+  sopware	
+  
+version.minor	
+  
+count	
+  
+Minor	
+  version	
+  number	
+  of	
+  the	
+  sopware	
+  
+version.minor2	
+  
+count	
+  
+Minor	
+  subversion	
+  number	
+  of	
+  the	
+  sopware	
+  
+version.minor3	
+  
+count	
+  
+Minor	
+  update	
+  number	
+  of	
+  the	
+  sopware	
+  
+version.addl	
+  
+string	
+  
+Addi&onal	
+  version	
+  string	
+  (e.g.	
+  beta42)	
+  
+unparsed_version	
+  
+string	
+  
+The	
+  full,	
+  unparsed	
+  version	
+  of	
+  the	
+  sopware	
+  
 software.log 
 Software identified by the software framework 
-Version:	  2.0	  
-3	  
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  when	  the	  message	  was	  ﬁrst	  seen	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-dura=on	  
-interval	  
-Time	  between	  the	  ﬁrst	  and	  last	  seen	  packet	  
-version	  
-string	  
-SNMP	  version	  (v1,	  v2c,	  v3)	  
-community	  
-string	  
-The	  community	  string	  of	  the	  ﬁrst	  SNMP	  packet	  
-get_requests	  
-count	  
-Number	  of	  GetRequest/GetNextRequest	  packets	  
-get_bulk_requests	   count	  
-Number	  of	  GetBulkRequest	  packets	  
-get_responses	  
-count	  
-Number	  of	  GetResponse/Response	  packets	  
-set_requests	  
-count	  
-Number	  of	  SetRequest	  packets	  
-display_string	  
-string	  
-A	  system	  descrip&on	  of	  the	  responder	  
-up_since	  
-&me	  
-Timestamp	  the	  responder	  has	  been	  up	  since	  
+Version:	
+  2.0	
+  
+3	
+  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  when	
+  the	
+  message	
+  was	
+  ﬁrst	
+  seen	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+dura=on	
+  
+interval	
+  
+Time	
+  between	
+  the	
+  ﬁrst	
+  and	
+  last	
+  seen	
+  packet	
+  
+version	
+  
+string	
+  
+SNMP	
+  version	
+  (v1,	
+  v2c,	
+  v3)	
+  
+community	
+  
+string	
+  
+The	
+  community	
+  string	
+  of	
+  the	
+  ﬁrst	
+  SNMP	
+  packet	
+  
+get_requests	
+  
+count	
+  
+Number	
+  of	
+  GetRequest/GetNextRequest	
+  packets	
+  
+get_bulk_requests	
+   count	
+  
+Number	
+  of	
+  GetBulkRequest	
+  packets	
+  
+get_responses	
+  
+count	
+  
+Number	
+  of	
+  GetResponse/Response	
+  packets	
+  
+set_requests	
+  
+count	
+  
+Number	
+  of	
+  SetRequest	
+  packets	
+  
+display_string	
+  
+string	
+  
+A	
+  system	
+  descrip&on	
+  of	
+  the	
+  responder	
+  
+up_since	
+  
+&me	
+  
+Timestamp	
+  the	
+  responder	
+  has	
+  been	
+  up	
+  since	
+  
 snmp.log 
 SNMP messages 
-©	  Broala	  LLC.	  	  
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  request	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-func	  
-string	  
-Func&on	  message	  that	  was	  sent	  
-excep=on	  
-string	  
-Excep&on	  if	  there	  was	  a	  failure	  
+©	
+  Broala	
+  LLC.	
+  	
+  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  request	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+func	
+  
+string	
+  
+Func&on	
+  message	
+  that	
+  was	
+  sent	
+  
+excep=on	
+  
+string	
+  
+Excep&on	
+  if	
+  there	
+  was	
+  a	
+  failure	
+  
 modbus.log 
 PLC requests (industrial control) 
 Bro 2.3 Logs 
 www.broala.com 
 38
 46
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  when	  the	  SSL	  connec&on	  was	  detected	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-version	  
-string	   SSL	  version	  that	  the	  server	  oﬀered	  
-cipher	  
-string	   SSL	  cipher	  suite	  that	  the	  server	  chose	  
-curve	  
-string	   Ellip&c	  curve	  the	  server	  chose	  if	  using	  ECDH/ECDHE	  
-server_name	  
-string	   Value	  of	  the	  Server	  Name	  Indicator	  SSL	  extension	  
-session_id	  
-string	   Session	  ID	  oﬀered	  by	  client	  for	  session	  resump&on	  
-last_alert	  
-string	   Last	  alert	  that	  was	  seen	  during	  the	  connec&on	  
-established	  
-bool	  
-Was	  this	  connec&on	  established	  successfully?	  
-cert_chain	  
-vector	   Chain	  of	  cer&ﬁcates	  oﬀered	  by	  the	  server	  
-cert_chain_fuids	  
-vector	   File	  unique	  IDs	  for	  certs	  in	  cert_chain.	  See	  ﬁles.log	  
-client_cert_chain	  
-vector	   Chain	  of	  cer&ﬁcates	  oﬀered	  by	  the	  client	  
-client_cert_chain_fuids	   vector	   File	  UIDs	  for	  certs	  in	  client_cert_chain.	  See	  ﬁles.log	  
-subject	  
-string	   Subject	  of	  the	  X.509	  cert	  oﬀered	  by	  the	  server	  
-issuer	  
-string	   Subject	  of	  the	  signer	  of	  the	  server	  cert	  
-client_subject	  
-string	   Subject	  of	  the	  X.509	  cert	  oﬀered	  by	  the	  client	  
-client_issuer_subject	  
-string	   Subject	  of	  the	  signer	  of	  the	  client	  cert	  
-valida=on_status	  
-string	   Cer&ﬁcate	  valida&on	  result	  for	  this	  handshake	  
-ocsp_status	  
-string	   Result	  of	  OCSP	  valida&on	  for	  this	  handshake	  
-ocsp_response	  
-string	   OCSP	  response	  as	  a	  string	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  when	
+  the	
+  SSL	
+  connec&on	
+  was	
+  detected	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+version	
+  
+string	
+   SSL	
+  version	
+  that	
+  the	
+  server	
+  oﬀered	
+  
+cipher	
+  
+string	
+   SSL	
+  cipher	
+  suite	
+  that	
+  the	
+  server	
+  chose	
+  
+curve	
+  
+string	
+   Ellip&c	
+  curve	
+  the	
+  server	
+  chose	
+  if	
+  using	
+  ECDH/ECDHE	
+  
+server_name	
+  
+string	
+   Value	
+  of	
+  the	
+  Server	
+  Name	
+  Indicator	
+  SSL	
+  extension	
+  
+session_id	
+  
+string	
+   Session	
+  ID	
+  oﬀered	
+  by	
+  client	
+  for	
+  session	
+  resump&on	
+  
+last_alert	
+  
+string	
+   Last	
+  alert	
+  that	
+  was	
+  seen	
+  during	
+  the	
+  connec&on	
+  
+established	
+  
+bool	
+  
+Was	
+  this	
+  connec&on	
+  established	
+  successfully?	
+  
+cert_chain	
+  
+vector	
+   Chain	
+  of	
+  cer&ﬁcates	
+  oﬀered	
+  by	
+  the	
+  server	
+  
+cert_chain_fuids	
+  
+vector	
+   File	
+  unique	
+  IDs	
+  for	
+  certs	
+  in	
+  cert_chain.	
+  See	
+  ﬁles.log	
+  
+client_cert_chain	
+  
+vector	
+   Chain	
+  of	
+  cer&ﬁcates	
+  oﬀered	
+  by	
+  the	
+  client	
+  
+client_cert_chain_fuids	
+   vector	
+   File	
+  UIDs	
+  for	
+  certs	
+  in	
+  client_cert_chain.	
+  See	
+  ﬁles.log	
+  
+subject	
+  
+string	
+   Subject	
+  of	
+  the	
+  X.509	
+  cert	
+  oﬀered	
+  by	
+  the	
+  server	
+  
+issuer	
+  
+string	
+   Subject	
+  of	
+  the	
+  signer	
+  of	
+  the	
+  server	
+  cert	
+  
+client_subject	
+  
+string	
+   Subject	
+  of	
+  the	
+  X.509	
+  cert	
+  oﬀered	
+  by	
+  the	
+  client	
+  
+client_issuer_subject	
+  
+string	
+   Subject	
+  of	
+  the	
+  signer	
+  of	
+  the	
+  client	
+  cert	
+  
+valida=on_status	
+  
+string	
+   Cer&ﬁcate	
+  valida&on	
+  result	
+  for	
+  this	
+  handshake	
+  
+ocsp_status	
+  
+string	
+   Result	
+  of	
+  OCSP	
+  valida&on	
+  for	
+  this	
+  handshake	
+  
+ocsp_response	
+  
+string	
+   OCSP	
+  response	
+  as	
+  a	
+  string	
+  
 ssl.log 
 SSL handshakes 
 Bro 2.3 Logs 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Time	  when	  the	  cert	  was	  seen	  
-id	  
-string	  
-File	  unique	  ID.	  See	  ﬁles.log	  
-cer=ﬁcate.version	  
-count	  
-Version	  number	  
-cer=ﬁcate.serial	  
-string	  
-Serial	  number	  
-cer=ﬁcate.issuer	  
-string	  
-Issuer	  
-cer=ﬁcate.not_valid_before	   &me	  
-Time	  before	  when	  the	  cert	  is	  
-invalid	  
-cer=ﬁcate.not_valid_a[er	  
-&me	  
-Time	  aper	  when	  the	  cert	  is	  
-invalid	  
-cer=ﬁcate.key_alg	  
-string	  
-Name	  of	  the	  key	  algorithm	  
-cer=ﬁcate.sig_alg	  
-string	  
-Name	  of	  the	  signature	  algorithm	  
-cer=ﬁcate.key_type	  
-string	  
-Key	  type	  (either	  RSA,	  DSA	  or	  EC)	  
-cer=ﬁcate.key_length	  
-count	  
-Key	  length,	  in	  bits	  
-cer=ﬁcate.exponent	  
-string	  
-Exponent,	  if	  RSA	  
-cer=ﬁcate.curve	  
-string	  
-Curve,	  if	  EC	  
-san.dns	  
-string_vec	   List	  of	  DNS	  entries	  in	  Subject	  
-Alterna&ve	  Name	  (SAN)	  
-san.uri	  
-string_vec	   List	  of	  URI	  entries	  in	  SAN	  
-san.email	  
-string_vec	   List	  of	  email	  entries	  in	  SAN	  
-san.ip	  
-addr_vec	  
-List	  of	  IP	  entries	  in	  SAN	  
-basic_constraints.ca	  
-bool	  
-CA	  ﬂag	  set?	  
-basic_constraints.path_len	  
-count	  
-Maximum	  path	  length	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Time	
+  when	
+  the	
+  cert	
+  was	
+  seen	
+  
+id	
+  
+string	
+  
+File	
+  unique	
+  ID.	
+  See	
+  ﬁles.log	
+  
+cer=ﬁcate.version	
+  
+count	
+  
+Version	
+  number	
+  
+cer=ﬁcate.serial	
+  
+string	
+  
+Serial	
+  number	
+  
+cer=ﬁcate.issuer	
+  
+string	
+  
+Issuer	
+  
+cer=ﬁcate.not_valid_before	
+   &me	
+  
+Time	
+  before	
+  when	
+  the	
+  cert	
+  is	
+  
+invalid	
+  
+cer=ﬁcate.not_valid_a[er	
+  
+&me	
+  
+Time	
+  aper	
+  when	
+  the	
+  cert	
+  is	
+  
+invalid	
+  
+cer=ﬁcate.key_alg	
+  
+string	
+  
+Name	
+  of	
+  the	
+  key	
+  algorithm	
+  
+cer=ﬁcate.sig_alg	
+  
+string	
+  
+Name	
+  of	
+  the	
+  signature	
+  algorithm	
+  
+cer=ﬁcate.key_type	
+  
+string	
+  
+Key	
+  type	
+  (either	
+  RSA,	
+  DSA	
+  or	
+  EC)	
+  
+cer=ﬁcate.key_length	
+  
+count	
+  
+Key	
+  length,	
+  in	
+  bits	
+  
+cer=ﬁcate.exponent	
+  
+string	
+  
+Exponent,	
+  if	
+  RSA	
+  
+cer=ﬁcate.curve	
+  
+string	
+  
+Curve,	
+  if	
+  EC	
+  
+san.dns	
+  
+string_vec	
+   List	
+  of	
+  DNS	
+  entries	
+  in	
+  Subject	
+  
+Alterna&ve	
+  Name	
+  (SAN)	
+  
+san.uri	
+  
+string_vec	
+   List	
+  of	
+  URI	
+  entries	
+  in	
+  SAN	
+  
+san.email	
+  
+string_vec	
+   List	
+  of	
+  email	
+  entries	
+  in	
+  SAN	
+  
+san.ip	
+  
+addr_vec	
+  
+List	
+  of	
+  IP	
+  entries	
+  in	
+  SAN	
+  
+basic_constraints.ca	
+  
+bool	
+  
+CA	
+  ﬂag	
+  set?	
+  
+basic_constraints.path_len	
+  
+count	
+  
+Maximum	
+  path	
+  length	
+  
 x509.log 
 SSL certificate details 
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  of	  message	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-name	  
-string	  
-The	  name	  of	  the	  weird	  that	  occurred	  
-addl	  
-string	  
-Addi&onal	  informa&on	  accompanying	  the	  weird,	  if	  any	  
-no=ce	  
-bool	  
-Indicate	  if	  this	  weird	  was	  also	  turned	  into	  a	  no&ce	  
-peer	  
-string	  
-The	  peer	  that	  generated	  this	  weird	  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  of	
+  message	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+name	
+  
+string	
+  
+The	
+  name	
+  of	
+  the	
+  weird	
+  that	
+  occurred	
+  
+addl	
+  
+string	
+  
+Addi&onal	
+  informa&on	
+  accompanying	
+  the	
+  weird,	
+  if	
+  any	
+  
+no=ce	
+  
+bool	
+  
+Indicate	
+  if	
+  this	
+  weird	
+  was	
+  also	
+  turned	
+  into	
+  a	
+  no&ce	
+  
+peer	
+  
+string	
+  
+The	
+  peer	
+  that	
+  generated	
+  this	
+  weird	
+  
 weird.log 
 Anomalies and protocol violations 
-©	  Broala	  LLC.	  	  
-Version:	  2.0	  
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Timestamp	  when	  the	  SSH	  connec&on	  was	  detected	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-status	  
-string	   If	  the	  login	  was	  heuris&cally	  guessed	  to	  be	  “success”	  or	  “failure”.	  
-direc=on	   string	   Outbound	  or	  inbound	  connec&on	  
-client	  
-string	   Sopware	  string	  from	  the	  client	  
-server	  
-string	   Sopware	  string	  from	  the	  server	  
-resp_size	   count	   Amount	  of	  data	  returned	  by	  the	  server	  
+©	
+  Broala	
+  LLC.	
+  	
+  
+Version:	
+  2.0	
+  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  when	
+  the	
+  SSH	
+  connec&on	
+  was	
+  detected	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+status	
+  
+string	
+   If	
+  the	
+  login	
+  was	
+  heuris&cally	
+  guessed	
+  to	
+  be	
+  “success”	
+  or	
+  “failure”.	
+  
+direc=on	
+   string	
+   Outbound	
+  or	
+  inbound	
+  connec&on	
+  
+client	
+  
+string	
+   Sopware	
+  string	
+  from	
+  the	
+  client	
+  
+server	
+  
+string	
+   Sopware	
+  string	
+  from	
+  the	
+  server	
+  
+resp_size	
+   count	
+   Amount	
+  of	
+  data	
+  returned	
+  by	
+  the	
+  server	
+  
 ssh.log 
 SSH handshakes 
-Field	  
-Type	  
-Descrip=on	  
-ts	  
-&me	  
-Timestamp	  tunnel	  was	  detected	  
-uid	  &	  id	  
-Underlying	  connec&on	  info	  -­‐	  See	  conn.log	  
-tunnel_type	  
-string	  
-The	  type	  of	  tunnel	  (e.g.	  Teredo,	  IP)	  
-ac=on	  
-string	  
-The	  ac&vity	  that	  occurred	  (discovered,	  closed)	  
+Field	
+  
+Type	
+  
+Descrip=on	
+  
+ts	
+  
+&me	
+  
+Timestamp	
+  tunnel	
+  was	
+  detected	
+  
+uid	
+  &	
+  id	
+  
+Underlying	
+  connec&on	
+  info	
+  -­‐	
+  See	
+  conn.log	
+  
+tunnel_type	
+  
+string	
+  
+The	
+  type	
+  of	
+  tunnel	
+  (e.g.	
+  Teredo,	
+  IP)	
+  
+ac=on	
+  
+string	
+  
+The	
+  ac&vity	
+  that	
+  occurred	
+  (discovered,	
+  closed)	
+  
 tunnel.log 
 Details of encapsulating tunnels 
-4	  
-Log	  
-Descrip=on	  
-app_stats	  
-Sta=s=cs	  on	  usage	  of	  popular	  web	  apps	  
-cluster	  
-Diagnos=cs	  for	  cluster	  opera=on	  
-communica=on	  
-Diagnos=cs	  for	  inter-­‐process	  communica=ons	  
-dpd	  
-Diagnos=cs	  for	  dynamic	  protocol	  detec=on	  
-known_certs	  
-Observed	  local	  SSL	  certs.	  Each	  is	  logged	  once/day	  
-known_devices	  
-Observed	  local	  devices.	  Each	  is	  logged	  once/day	  
-known_hosts	  
-Observed	  local	  ac=ve	  IPs.	  Each	  is	  logged	  once/day	  
-known_services	  
-Observed	  local	  services.	  Each	  is	  logged	  once/day	  
-loaded_scripts	  
-A	  list	  of	  scripts	  that	  were	  loaded	  at	  startup	  
-packet_ﬁlter	  
-Any	  ﬁlters	  to	  limit	  the	  traﬃc	  being	  analyzed	  
-stats	  
-Diagnos=cs	  such	  as	  mem	  usage,	  packets	  seen,	  etc.	  
-syslog	  
-Syslog	  messages	  
-traceroute	  
-Hosts	  running	  traceroute	  
+4	
+  
+Log	
+  
+Descrip=on	
+  
+app_stats	
+  
+Sta=s=cs	
+  on	
+  usage	
+  of	
+  popular	
+  web	
+  apps	
+  
+cluster	
+  
+Diagnos=cs	
+  for	
+  cluster	
+  opera=on	
+  
+communica=on	
+  
+Diagnos=cs	
+  for	
+  inter-­‐process	
+  communica=ons	
+  
+dpd	
+  
+Diagnos=cs	
+  for	
+  dynamic	
+  protocol	
+  detec=on	
+  
+known_certs	
+  
+Observed	
+  local	
+  SSL	
+  certs.	
+  Each	
+  is	
+  logged	
+  once/day	
+  
+known_devices	
+  
+Observed	
+  local	
+  devices.	
+  Each	
+  is	
+  logged	
+  once/day	
+  
+known_hosts	
+  
+Observed	
+  local	
+  ac=ve	
+  IPs.	
+  Each	
+  is	
+  logged	
+  once/day	
+  
+known_services	
+  
+Observed	
+  local	
+  services.	
+  Each	
+  is	
+  logged	
+  once/day	
+  
+loaded_scripts	
+  
+A	
+  list	
+  of	
+  scripts	
+  that	
+  were	
+  loaded	
+  at	
+  startup	
+  
+packet_ﬁlter	
+  
+Any	
+  ﬁlters	
+  to	
+  limit	
+  the	
+  traﬃc	
+  being	
+  analyzed	
+  
+stats	
+  
+Diagnos=cs	
+  such	
+  as	
+  mem	
+  usage,	
+  packets	
+  seen,	
+  etc.	
+  
+syslog	
+  
+Syslog	
+  messages	
+  
+traceroute	
+  
+Hosts	
+  running	
+  traceroute	
+  
 Other Logs 
 www.broala.com 
-In	  order	  to	  promote	  its	  wide	  distribu&on,	  this	  work	  is	  licensed	  under	  the	  Crea&ve	  Commons	  A)ribu&on-­‐NonCommercial-­‐ShareAlike	  4.0	  Interna&onal	  License	  (h)p://
-crea&vecommons.org/licenses/by-­‐nc-­‐sa/4.0/).	  We	  at	  Broala	  are	  commi)ed	  to	  helping	  you	  understand	  Bro	  to	  the	  fullest	  so	  you	  can	  be	  a	  monitoring	  hero.	  
-Field	  
-Type	   Descrip=on	  
-ts	  
-&me	  
-Message	  &mestamp,	  if	  available	  (0	  otherwise)	  
-level	  
-string	  
-Message	  severity	  (Info,	  warning,	  error,	  etc.)	  
-message	  
-string	  
-Message	  text	  
-loca&on	  
-string	  
-The	  script	  loca&on	  where	  the	  event	  occurred,	  if	  
-available	  
+In	
+  order	
+  to	
+  promote	
+  its	
+  wide	
+  distribu&on,	
+  this	
+  work	
+  is	
+  licensed	
+  under	
+  the	
+  Crea&ve	
+  Commons	
+  A)ribu&on-­‐NonCommercial-­‐ShareAlike	
+  4.0	
+  Interna&onal	
+  License	
+  (h)p://
+crea&vecommons.org/licenses/by-­‐nc-­‐sa/4.0/).	
+  We	
+  at	
+  Broala	
+  are	
+  commi)ed	
+  to	
+  helping	
+  you	
+  understand	
+  Bro	
+  to	
+  the	
+  fullest	
+  so	
+  you	
+  can	
+  be	
+  a	
+  monitoring	
+  hero.	
+  
+Field	
+  
+Type	
+   Descrip=on	
+  
+ts	
+  
+&me	
+  
+Message	
+  &mestamp,	
+  if	
+  available	
+  (0	
+  otherwise)	
+  
+level	
+  
+string	
+  
+Message	
+  severity	
+  (Info,	
+  warning,	
+  error,	
+  etc.)	
+  
+message	
+  
+string	
+  
+Message	
+  text	
+  
+loca&on	
+  
+string	
+  
+The	
+  script	
+  loca&on	
+  where	
+  the	
+  event	
+  occurred,	
+  if	
+  
+available	
+  
 reporter.log 
 Bro internal errors and warnings 
 39
@@ -16288,153 +18965,805 @@ Access 
 77
 Linux Commands 
 Getting around 
-Command	  
-Descrip/on	  
+Command	
+  
+Descrip/on	
+  
 cd logs 
-Move	  to	  the	  logs	  directory,	  which	  is	  located	  in	  the	  current	  directory.	  
+Move	
+  to	
+  the	
+  logs	
+  directory,	
+  which	
+  is	
+  located	
+  in	
+  the	
+  current	
+  directory.	
+  
 cd /logs 
-Move	  to	  the	  logs	  directory,	  which	  is	  located	  in	  the	  top-­‐level	  directory.	  
+Move	
+  to	
+  the	
+  logs	
+  directory,	
+  which	
+  is	
+  located	
+  in	
+  the	
+  top-­‐level	
+  directory.	
+  
 cd .. 
-Move	  up	  one	  directory.	  
+Move	
+  up	
+  one	
+  directory.	
+  
 cd ~ 
-Move	  to	  your	  home	  directory	  (the	  “:lde”	  character	  is	  le<	  of	  the	  1	  key).	  
+Move	
+  to	
+  your	
+  home	
+  directory	
+  (the	
+  “:lde”	
+  character	
+  is	
+  le<	
+  of	
+  the	
+  1	
+  key).	
+  
 cd - 
-Move	  to	  the	  directory	  you	  were	  previously	  in.	  
-Command	  
-Descrip/on	  
+Move	
+  to	
+  the	
+  directory	
+  you	
+  were	
+  previously	
+  in.	
+  
+Command	
+  
+Descrip/on	
+  
 cat data.txt 
-Display	  data.txt	  
+Display	
+  data.txt	
+  
 cat *.txt 
-Display	  all	  ﬁles	  that	  end	  with	  .txt	  
+Display	
+  all	
+  ﬁles	
+  that	
+  end	
+  with	
+  .txt	
+  
 head data.txt 
-Display	  the	  ﬁrst	  10	  lines	  of	  data.txt.	  
+Display	
+  the	
+  ﬁrst	
+  10	
+  lines	
+  of	
+  data.txt.	
+  
 head –n 20 data.txt 
-Display	  the	  ﬁrst	  20	  lines	  of	  data.txt.	  
+Display	
+  the	
+  ﬁrst	
+  20	
+  lines	
+  of	
+  data.txt.	
+  
 tail data.txt 
-Display	  the	  last	  10	  lines	  of	  data.txt.	  
+Display	
+  the	
+  last	
+  10	
+  lines	
+  of	
+  data.txt.	
+  
 tail –n 30 data.txt 
-Display	  the	  last	  20	  lines	  of	  data.txt.	  
+Display	
+  the	
+  last	
+  20	
+  lines	
+  of	
+  data.txt.	
+  
 tail –F data.txt 
-Display	  the	  last	  10	  lines	  of	  data.txt	  and	  con:nue	  
-running,	  displaying	  any	  new	  lines	  in	  the	  ﬁle.	  
-Note:	  Press	  Ctrl+C	  to	  exit.	  
+Display	
+  the	
+  last	
+  10	
+  lines	
+  of	
+  data.txt	
+  and	
+  con:nue	
+  
+running,	
+  displaying	
+  any	
+  new	
+  lines	
+  in	
+  the	
+  ﬁle.	
+  
+Note:	
+  Press	
+  Ctrl+C	
+  to	
+  exit.	
+  
 grep malware data.txt 
-Display	  all	  lines	  in	  data.txt	  that	  contain	  
-‘malware’.	  
-grep –v malware data.txt Display	  all	  lines	  that	  do	  not	  contain	  ‘malware’.	  
-grep ‘mal ware’ data.txt To	  search	  for	  phrases	  with	  spaces,	  use	  single	  
-quotes.	  
-grep –F 1.2.3.4 data.txt To	  search	  for	  phrases	  with	  periods,	  use	  –F	  
+Display	
+  all	
+  lines	
+  in	
+  data.txt	
+  that	
+  contain	
+  
+‘malware’.	
+  
+grep –v malware data.txt Display	
+  all	
+  lines	
+  that	
+  do	
+  not	
+  contain	
+  ‘malware’.	
+  
+grep ‘mal ware’ data.txt To	
+  search	
+  for	
+  phrases	
+  with	
+  spaces,	
+  use	
+  single	
+  
+quotes.	
+  
+grep –F 1.2.3.4 data.txt To	
+  search	
+  for	
+  phrases	
+  with	
+  periods,	
+  use	
+  –F	
+  
 grep –c exe data.txt 
-Display	  how	  many	  lines	  in	  data.txt	  contain	  
-‘exe’	  (but	  don’t	  display	  them).	  
-grep –F –c 1.2.3.4 *.txt Display	  the	  number	  of	  lines	  with	  IP	  1.2.3.4	  in	  
-each	  ﬁle	  that	  ends	  in	  .txt.	  
+Display	
+  how	
+  many	
+  lines	
+  in	
+  data.txt	
+  contain	
+  
+‘exe’	
+  (but	
+  don’t	
+  display	
+  them).	
+  
+grep –F –c 1.2.3.4 *.txt Display	
+  the	
+  number	
+  of	
+  lines	
+  with	
+  IP	
+  1.2.3.4	
+  in	
+  
+each	
+  ﬁle	
+  that	
+  ends	
+  in	
+  .txt.	
+  
 less large.file 
-Display	  large.ﬁle	  in	  less	  (see	  right).	  
+Display	
+  large.ﬁle	
+  in	
+  less	
+  (see	
+  right).	
+  
 less –S large.file 
-Display	  large.ﬁle	  in	  less	  (see	  right),	  and	  allow	  for	  
-side-­‐to-­‐side	  scrolling.	  
+Display	
+  large.ﬁle	
+  in	
+  less	
+  (see	
+  right),	
+  and	
+  allow	
+  for	
+  
+side-­‐to-­‐side	
+  scrolling.	
+  
 Viewing and searching in files 
-Key	  or	  Command	  
-Descrip/on	  
+Key	
+  or	
+  Command	
+  
+Descrip/on	
+  
 q 
-Quit	  
+Quit	
+  
 Up/down arrow 
-Move	  up/down	  one	  line.	  
-Left/right arrow Move	  le</right	  half	  of	  a	  page.	  
-Note:	  requires	  less	  –S	  
+Move	
+  up/down	
+  one	
+  line.	
+  
+Left/right arrow Move	
+  le</right	
+  half	
+  of	
+  a	
+  page.	
+  
+Note:	
+  requires	
+  less	
+  –S	
+  
 Page up/down 
-Move	  up/down	  one	  page.	  
+Move	
+  up/down	
+  one	
+  page.	
+  
 g 
-Go	  to	  the	  ﬁrst	  line	  
+Go	
+  to	
+  the	
+  ﬁrst	
+  line	
+  
 G 
-Go	  to	  the	  last	  line	  
+Go	
+  to	
+  the	
+  last	
+  line	
+  
 F 
-Go	  to	  the	  last	  line,	  and	  display	  any	  new	  lines	  
-(similar	  to	  tail	  –F).	  
-Note:	  Press	  Ctrl+C	  to	  exit.	  
+Go	
+  to	
+  the	
+  last	
+  line,	
+  and	
+  display	
+  any	
+  new	
+  lines	
+  
+(similar	
+  to	
+  tail	
+  –F).	
+  
+Note:	
+  Press	
+  Ctrl+C	
+  to	
+  exit.	
+  
 /malware 
-Search	  -­‐	  go	  to	  the	  next	  line	  containing	  the	  word	  
-‘malware.’	  
+Search	
+  -­‐	
+  go	
+  to	
+  the	
+  next	
+  line	
+  containing	
+  the	
+  word	
+  
+‘malware.’	
+  
 /!malware 
-Search	  –	  go	  to	  the	  next	  line	  NOT	  containing	  	  the	  
-word	  ‘malware.’	  
+Search	
+  –	
+  go	
+  to	
+  the	
+  next	
+  line	
+  NOT	
+  containing	
+  	
+  the	
+  
+word	
+  ‘malware.’	
+  
 ?malware 
-Search	  –	  go	  to	  the	  previous	  line	  containing	  the	  
-word	  ‘malware.’	  
+Search	
+  –	
+  go	
+  to	
+  the	
+  previous	
+  line	
+  containing	
+  the	
+  
+word	
+  ‘malware.’	
+  
 n 
-Repeat	  a	  previous	  search.	  
+Repeat	
+  a	
+  previous	
+  search.	
+  
 N 
-Repeat	  a	  previous	  search,	  but	  in	  the	  opposite	  
-direc:on.	  
+Repeat	
+  a	
+  previous	
+  search,	
+  but	
+  in	
+  the	
+  opposite	
+  
+direc:on.	
+  
 Navigating in less 
-Tip	  –	  Tab	  Comple/on	  
-Use	  tab	  comple/on	  to	  type	  ﬁlenames	  faster.	  	  
-As	  you’re	  typing	  a	  ﬁlename	  (or	  directory),	  hit	  the	  tab	  key.	  If	  
-there’s	  only	  one	  ﬁle	  that	  matches	  what	  you’ve	  typed,	  the	  
-rest	  of	  the	  ﬁlename	  will	  be	  ﬁlled	  in.	  If	  nothing	  happens	  when	  
-you	  hit	  tab,	  simply	  hit	  tab	  again	  to	  see	  a	  list	  of	  matches.	  
-Command	  
-Descrip/on	  
+Tip	
+  –	
+  Tab	
+  Comple/on	
+  
+Use	
+  tab	
+  comple/on	
+  to	
+  type	
+  ﬁlenames	
+  faster.	
+  	
+  
+As	
+  you’re	
+  typing	
+  a	
+  ﬁlename	
+  (or	
+  directory),	
+  hit	
+  the	
+  tab	
+  key.	
+  If	
+  
+there’s	
+  only	
+  one	
+  ﬁle	
+  that	
+  matches	
+  what	
+  you’ve	
+  typed,	
+  the	
+  
+rest	
+  of	
+  the	
+  ﬁlename	
+  will	
+  be	
+  ﬁlled	
+  in.	
+  If	
+  nothing	
+  happens	
+  when	
+  
+you	
+  hit	
+  tab,	
+  simply	
+  hit	
+  tab	
+  again	
+  to	
+  see	
+  a	
+  list	
+  of	
+  matches.	
+  
+Command	
+  
+Descrip/on	
+  
 | (AKA “pipe”) 
-Pass	  the	  output	  of	  one	  command	  to	  another	  command.	  
-Note:	  For	  the	  “pipe”	  character,	  use	  the	  key	  above	  enter	  (same	  key	  as	  backslash).	  
+Pass	
+  the	
+  output	
+  of	
+  one	
+  command	
+  to	
+  another	
+  command.	
+  
+Note:	
+  For	
+  the	
+  “pipe”	
+  character,	
+  use	
+  the	
+  key	
+  above	
+  enter	
+  (same	
+  key	
+  as	
+  backslash).	
+  
 grep malware data.txt | tail –n 30 
-Display	  the	  last	  30	  lines	  in	  data.txt	  that	  contain	  the	  word	  ‘malware.’	  
+Display	
+  the	
+  last	
+  30	
+  lines	
+  in	
+  data.txt	
+  that	
+  contain	
+  the	
+  word	
+  ‘malware.’	
+  
 grep malware data.txt | grep blaster 
-Display	  lines	  in	  data.txt	  that	  contain	  ‘malware’	  and	  also	  contain	  ‘blaster.’	  
+Display	
+  lines	
+  in	
+  data.txt	
+  that	
+  contain	
+  ‘malware’	
+  and	
+  also	
+  contain	
+  ‘blaster.’	
+  
 cat data.txt | sort 
-Display	  data.txt,	  sorted	  alphabe:cally.	  
+Display	
+  data.txt,	
+  sorted	
+  alphabe:cally.	
+  
 cat data.txt | sort | uniq 
-Display	  data.txt,	  sorted	  alphabe:cally,	  with	  duplicates	  removed.	  
+Display	
+  data.txt,	
+  sorted	
+  alphabe:cally,	
+  with	
+  duplicates	
+  removed.	
+  
 cat data.txt | sort | uniq –c 
-Sort,	  remove	  duplicates,	  and	  display	  the	  number	  of	  :mes	  each	  line	  occurred.	  
+Sort,	
+  remove	
+  duplicates,	
+  and	
+  display	
+  the	
+  number	
+  of	
+  :mes	
+  each	
+  line	
+  occurred.	
+  
 cat data.txt | sort | uniq –c | sort –n 
-Sort,	  remove	  duplicates,	  and	  display	  the	  most	  frequent	  lines.	  
+Sort,	
+  remove	
+  duplicates,	
+  and	
+  display	
+  the	
+  most	
+  frequent	
+  lines.	
+  
 è cat data.txt | sort | uniq –c | sort –n | tail –n 20  
-Sort,	  remove	  duplicates,	  and	  display	  the	  20	  most	  frequent	  lines.	  
+Sort,	
+  remove	
+  duplicates,	
+  and	
+  display	
+  the	
+  20	
+  most	
+  frequent	
+  lines.	
+  
 cat conn.log | bro-cut id.resp_h proto service 
-Only	  display	  the	  id.resp_h,	  proto	  and	  service	  columns	  of	  the	  conn	  Bro	  log.	  
+Only	
+  display	
+  the	
+  id.resp_h,	
+  proto	
+  and	
+  service	
+  columns	
+  of	
+  the	
+  conn	
+  Bro	
+  log.	
+  
 cat http.log | bro-cut –d ts method host uri 
-Only	  display	  the	  :mestamp,	  method,	  host	  and	  uri	  columns,	  and	  convert	  the	  
-/mestamp	  to	  human-­‐readable	  format.	  
+Only	
+  display	
+  the	
+  :mestamp,	
+  method,	
+  host	
+  and	
+  uri	
+  columns,	
+  and	
+  convert	
+  the	
+  
+/mestamp	
+  to	
+  human-­‐readable	
+  format.	
+  
 Putting it all together 
-Tip	  –	  Compressed	  Files	  
-Files	  that	  end	  in	  .gz	  are	  compressed,	  and	  
-might	  require	  some	  diﬀerent	  commands:	  
-Command	  
-Modiﬁca/on	  for	  .gz	  
-cat	  or	  grep	  
-Use	  zcat	  or	  zgrep.	  	  
-head	  or	  tail	  
-Use	  zcat	  |	  head	  or	  zcat	  |	  tail	  
-Tip	  –	  Working	  With	  Big	  Files	  
-Commands	  take	  longer	  to	  run	  on	  larger	  
-ﬁles.	  Some	  things	  to	  keep	  in	  mind	  are:	  
-	  
+Tip	
+  –	
+  Compressed	
+  Files	
+  
+Files	
+  that	
+  end	
+  in	
+  .gz	
+  are	
+  compressed,	
+  and	
+  
+might	
+  require	
+  some	
+  diﬀerent	
+  commands:	
+  
+Command	
+  
+Modiﬁca/on	
+  for	
+  .gz	
+  
+cat	
+  or	
+  grep	
+  
+Use	
+  zcat	
+  or	
+  zgrep.	
+  	
+  
+head	
+  or	
+  tail	
+  
+Use	
+  zcat	
+  |	
+  head	
+  or	
+  zcat	
+  |	
+  tail	
+  
+Tip	
+  –	
+  Working	
+  With	
+  Big	
+  Files	
+  
+Commands	
+  take	
+  longer	
+  to	
+  run	
+  on	
+  larger	
+  
+ﬁles.	
+  Some	
+  things	
+  to	
+  keep	
+  in	
+  mind	
+  are:	
+  
+	
+  
 • 
-Use	  grep	  –F	  instead	  of	  plain	  grep.	  	  
+Use	
+  grep	
+  –F	
+  instead	
+  of	
+  plain	
+  grep.	
+  	
+  
 • 
-For	  viewing	  the	  ﬁle,	  use	  less	  instead	  of	  cat.	  
+For	
+  viewing	
+  the	
+  ﬁle,	
+  use	
+  less	
+  instead	
+  of	
+  cat.	
+  
 • 
-Try	  to	  use	  grep	  as	  early	  as	  possible,	  so	  if	  
-you	  pipe	  to	  other	  tools,	  there’s	  less	  data	  to	  
-crunch.	  
-Tip	  –	  Documenta/on	  
-Linux	  commands	  are	  all	  well	  
-documented.	  To	  view	  the	  
-documenta:on:	  
-	  
+Try	
+  to	
+  use	
+  grep	
+  as	
+  early	
+  as	
+  possible,	
+  so	
+  if	
+  
+you	
+  pipe	
+  to	
+  other	
+  tools,	
+  there’s	
+  less	
+  data	
+  to	
+  
+crunch.	
+  
+Tip	
+  –	
+  Documenta/on	
+  
+Linux	
+  commands	
+  are	
+  all	
+  well	
+  
+documented.	
+  To	
+  view	
+  the	
+  
+documenta:on:	
+  
+	
+  
 • 
-Run	  the	  command	  with	  -­‐-­‐help	  (e.g.	  tail	  
--­‐-­‐help)	  to	  see	  the	  op:ons.	  
+Run	
+  the	
+  command	
+  with	
+  -­‐-­‐help	
+  (e.g.	
+  tail	
+  
+-­‐-­‐help)	
+  to	
+  see	
+  the	
+  op:ons.	
+  
 • 
-Use	  the	  manual	  pages	  for	  more	  detail	  
-(e.g.	  man	  tail).	  Note:	  these	  open	  in	  less.	  
-In	  order	  to	  promote	  its	  wide	  distribu:on,	  this	  work	  is	  licensed	  under	  the	  Crea:ve	  Commons	  Abribu:on-­‐NonCommercial-­‐ShareAlike	  4.0	  Interna:onal	  License	  (hbp://
-crea:vecommons.org/licenses/by-­‐nc-­‐sa/4.0/).	  We	  at	  Broala	  are	  commibed	  to	  helping	  you	  understand	  Bro	  to	  the	  fullest	  so	  you	  can	  be	  a	  monitoring	  hero.	  
-©	  Broala	  LLC.	  	  
+Use	
+  the	
+  manual	
+  pages	
+  for	
+  more	
+  detail	
+  
+(e.g.	
+  man	
+  tail).	
+  Note:	
+  these	
+  open	
+  in	
+  less.	
+  
+In	
+  order	
+  to	
+  promote	
+  its	
+  wide	
+  distribu:on,	
+  this	
+  work	
+  is	
+  licensed	
+  under	
+  the	
+  Crea:ve	
+  Commons	
+  Abribu:on-­‐NonCommercial-­‐ShareAlike	
+  4.0	
+  Interna:onal	
+  License	
+  (hbp://
+crea:vecommons.org/licenses/by-­‐nc-­‐sa/4.0/).	
+  We	
+  at	
+  Broala	
+  are	
+  commibed	
+  to	
+  helping	
+  you	
+  understand	
+  Bro	
+  to	
+  the	
+  fullest	
+  so	
+  you	
+  can	
+  be	
+  a	
+  monitoring	
+  hero.	
+  
+©	
+  Broala	
+  LLC.	
+  	
+  
 65
 78
 Basic Linux Commands 
@@ -17600,37 +20929,37 @@ Back one word
 <ctrl>u
 Back to beginning of insert
 vi Editor “Cheat Sheet”
-Invoking vi:
-vi  filename
+nvoking vi:
+i  filename
 Format of vi commands:
-[count][command]
+count][command]
 (count repeats the effect of the command)
 76
 90
 Deletion commands
-dd  or ndd
+d  or ndd
 Delete n lines to general buffer
-dw
+w
 Delete word to general buffer
-dnw
+nw
 Delete n words
 d)
-Delete to end of sentence
+elete to end of sentence
 db
 Delete previous word
 D
 Delete to end of line
-x
-Delete character
+
+elete character
 Recovering deletions
 p
 Put general buffer after cursor
 P
 Put general buffer before cursor
-Undo commands
-u
-Undo last change
-U
+ndo commands
+
+ndo last change
+
 Undo all changes on line
 Rearrangement commands
 yy or Y
@@ -17644,11 +20973,11 @@ Delete 9 lines to buffer a
 “A9dd
 Delete 9 lines; Append to buffer a
 “ap
-Put text from buffer a  after cursor
-p
-Put general buffer after cursor
+ut text from buffer a  after cursor
+
+ut general buffer after cursor
 P
-Put general buffer before cursor
+ut general buffer before cursor
 J
 Join lines
 Parameters
@@ -17682,11 +21011,11 @@ vi old
 yank 10 lines to buffer a
 :w
 write work buffer
-:e new
-edit new file
+e new
+dit new file
 “ap
 put text from a after cursor
-:30,60w new
+30,60w new
 Write lines 30 to 60 in file new
 Regular expressions (search strings)
 ^
@@ -17694,12 +21023,12 @@ Matches beginning of line
 $
 Matches end of line
 .
-Matches any single character
+atches any single character
 *
-Matches any previous character
-.*
+atches any previous character
+*
 Matches any character
-Search and replace commands
+earch and replace commands
 Syntax:
 :[address]s/old_text/new_text/
 Address components:
@@ -17855,27 +21184,27 @@ Web service stopped/started/failed messages
 Access to ͞risky͟ pages that accept user input 
 Look at logs on all servers in the load balancer pool 
 Error code 200 on files that are not yours 
-Failed user authentication 
+ailed user authentication 
 Error code 401, 403 
 Invalid request 
 Error code 400 
-Internal server error 
+nternal server error 
 Error code 500 
 Other Resources 
-Windows event ID lookup: www.eventid.net 
+indows event ID lookup: www.eventid.net 
 A listing of many Windows Security Log events: 
 ultimatewindowssecurity.com/.../Default.aspx 
 Log analysis references: www.loganalysis.org 
-A list of open-source log analysis tools:  
+ list of open-source log analysis tools:  
 securitywarriorconsulting.com/logtools 
 AŶtoŶ ChuǀakiŶ’s log management blog: 
-securitywarriorconsulting.com/logmanagementblog 
+ecuritywarriorconsulting.com/logmanagementblog 
 Other security incident response-related cheat 
 sheets: zeltser.com/cheat-sheets 
 Authored by Anton Chuvakin (chuvakin.org) and Lenny Zeltser (zeltser.com). Reviewed by Anand Sastry. Distributed according to the Creatiǀe CoŵŵoŶs ǀ3 ͞AttriďutioŶ͟ LiĐeŶse. 
-Cheat sheet version 1.0. 
+heat sheet version 1.0. 
 92
-INITIAL SECURITY INCIDENT 
+NITIAL SECURITY INCIDENT 
 QUESTIONNAIRE FOR RESPONDERS 
 Tips for assisting incident handlers in assessing the 
 situation when responding to a qualified incident. 
@@ -18578,6 +21907,44 @@ Incident handling steps
  
  
  
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
  
  
  
@@ -18590,57 +21957,19 @@ Incident handling steps
  
  
  
+
+ 
+ 
+
+ 
+
+ 
+
  
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
 Identify 
 Identify tools and remediation methods. 
 The following resources should be considered: 
@@ -18660,23 +21989,23 @@ properly works without damaging any service.
  
  
 Deploy 
-Deploy the disinfection tools. Several options can 
+eploy the disinfection tools. Several options can 
 be used: 
 - 
 Windows WSUS 
 - 
 GPO 
 - 
-Antivirus signature deployment 
+ntivirus signature deployment 
 - 
-Manual disinfection 
+anual disinfection 
  
 Warning: some worms can block some of the 
 remediation 
 deployment 
 methods. 
 If 
-so, 
+o, 
 a 
 workaround has to be found. 
  
@@ -18810,6 +22139,35 @@ Identification
  
  
  
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
  
  
  
@@ -18821,54 +22179,25 @@ Identification
  
  
  
+
+ 
+
+ 
+ 
+
  
  
  
  
  
  
+
  
+
  
+
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
  
  
  
