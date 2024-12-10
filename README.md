@@ -1,16 +1,27 @@
-# Threat Actor Payload Generator
+# Threat Payload Generator
 
-This Streamlit app generates payloads for MITRE ATT&CK techniques based on a threat actor's profile.
+A Streamlit app for generating and managing threat actor payloads.
+
+## Installation
+
+1. Clone the repository or download the files.
+2. Create a virtual environment:
+
+   `python -m venv venv source venv/bin/activate # On Linux/macOS venv\Scripts\activate # On Windows`
+
+3. Install the dependencies:
+
+   `pip install -r requirements.txt`
+
+## Running the App
+
+`streamlit run threat_s_lit.py`
+
 
 ## Features
-- Fetch techniques associated with a specific threat actor.
-- Generate payloads dynamically.
-- Download generated payloads for each technique.
 
-## Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/attack_planner.git
-   cd attack_planner
-   export PWNLIB_NOTERM=1
-   streamlit run app/app.py
+- Real-time threat actor validation
+- Payload generation using `pwn`
+- Advanced filtering and search
+- Data export and persistent session state
+- Application logs with detailed tracking
