@@ -5,3 +5,4 @@ venv/
 attack_planner/
 __pycache__/
 output/
+devai/
